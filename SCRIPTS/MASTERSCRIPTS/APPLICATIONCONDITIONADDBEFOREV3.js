@@ -113,6 +113,11 @@ var conditionStatus = aa.env.getValue("ConditionStatus");
 logDebug("conditionStatus = " + conditionStatus);
 var conditionType = aa.env.getValue("ConditionType");
 logDebug("conditionType = " + conditionType);
+var conditionLongDescription = aa.env.getValue("LongDescripton");
+logDebug("conditionLongDescription = " + conditionLongDescription);
+var conditionResolutionAction = aa.env.getValue("ResolutionAction");
+logDebug("conditionResolutionAction = " + conditionResolutionAction);
+
 var conditionObj = aa.capCondition.getCapCondition(capId, conditionId).getOutput()
 	logDebug("conditionObj = " + conditionObj.getClass());
 
