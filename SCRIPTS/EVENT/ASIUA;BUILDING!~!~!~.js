@@ -24,6 +24,11 @@ try{
 			}
 		}
 	}
+	
+	//@TODO: If this is a hold or lock, it will kill lower building branches
+	if (!appMatch("Building/Enforcement/*/*") && AInfo['Type of Permit'] == "Demo - Building" && !appHasCondition("DRT Review",null,"Sewer Cut and Cap")) {
+		addStdCondition("DRT Review","Sewer Cut and Cap","Not Met");
+	}
 
 }catch(err){
 	logDebug("An error occurred in ASIUA:Building/*/*/*: Conversion: " + err. message);
