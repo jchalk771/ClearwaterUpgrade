@@ -26,7 +26,7 @@ var documentOnly = false; // Document Only -- displays hierarchy of std choice s
 /*------------------------------------------------------------------------------------------------------/
 | END User Configurable Parameters
 /------------------------------------------------------------------------------------------------------*/
-var SCRIPT_VERSION = 9.0;
+var SCRIPT_VERSION = 3.0;
 var useCustomScriptFile = true; // if true, use Events->Custom Script and Master Scripts, else use Events->Scripts->INCLUDES_*
 var useSA = false;
 var SA = null;
@@ -50,11 +50,6 @@ if (bzr) {
 	doStdChoices = bvr1.getSuccess() && bvr1.getOutput().getAuditStatus() != "I";
 	var bvr1 = aa.bizDomain.getBizDomainByValue(controlFlagStdChoice, "SCRIPT");
 	doScripts = bvr1.getSuccess() && bvr1.getOutput().getAuditStatus() != "I";
-	var bvr3 = aa.bizDomain.getBizDomainByValue(controlFlagStdChoice, "USE_MASTER_INCLUDES");
-	if (bvr3.getSuccess()) {
-		if (bvr3.getOutput().getDescription() == "No")
-			useCustomScriptFile = false
-	};
 }
 
 if (SA) {
