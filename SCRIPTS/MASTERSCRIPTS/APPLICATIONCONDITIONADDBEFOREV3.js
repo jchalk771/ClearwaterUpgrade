@@ -7,7 +7,7 @@
 | Client  : N/A
 | Action# : N/A
 |
-| Notes   : New Master Script 7.5.2017 jchalk, Accela, modified for Non-productized 3.0 usage
+| Notes   : Master Script 7.5.2017 jchalk, Accela, modified for Non-productized 3.0 usage
 |
 |
 /------------------------------------------------------------------------------------------------------*/
