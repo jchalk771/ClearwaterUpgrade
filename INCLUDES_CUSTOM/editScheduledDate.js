@@ -1,3 +1,4 @@
+//Noted in ACUB
 function editScheduledDate(scheduledDate) // option CapId
 {
 	var itemCap = capId

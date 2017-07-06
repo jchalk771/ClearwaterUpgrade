@@ -1,5 +1,5 @@
 //Reactivate the current task step, all tasks that were active
-//nested in ApplicationConditionAddBefore
+//noted in ACUB
 
 function assignDueDateToTaskLevel(tasklevel, duedate) {
 	var workflowResult = aa.workflow.getTasks(capID);

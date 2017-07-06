@@ -1,3 +1,4 @@
+//Noted i ACUB
 function debugObject(object) {
 	var output = '';
 	for (property in object) {

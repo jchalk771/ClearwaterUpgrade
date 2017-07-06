@@ -1,3 +1,4 @@
+//noted in ACUB
 function validateComment(stringToTest) {
 	logDebug("String to validate: [" + stringToTest + "]");
 	//logDebug( aa.env.getParamValues() );
