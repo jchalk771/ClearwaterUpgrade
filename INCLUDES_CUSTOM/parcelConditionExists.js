@@ -24,7 +24,7 @@ function parcelConditionExists(condtype,conddesc){
 			}
 
 	}catch(err){
-		logDebug("An error occurred in custom function functionName Conversion: " + err. message);
+		logDebug("An error occurred in custom function parcelConditionExists Conversion: " + err. message);
 		logDebug(err.stack);
 	}
 }
