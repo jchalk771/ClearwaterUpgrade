@@ -8,7 +8,8 @@ function addStdCondition(cType,cDesc) // optional status code, cap id
 		if (arguments.length == 3) useStatus = arguments[2]; // use status code in args
 
 		var itemCap = capId;
-		if (arguments.length == 4) itemCap = arguments[3]; // use cap ID specified in args
+		if (arguments.length == 4) 
+			itemCap = arguments[3]; // use cap ID specified in args
 		scs = aa.capCondition.getStandardConditions(cType,cDesc).getOutput();
 		for(i = 0; i<scs.length;i++)
 			{
