@@ -29,11 +29,7 @@ function resolveCondition(pType, pStatus, pDesc, pImpact, nStatus, nImpact, nSta
 			if (cImpact == null)
 				cImpact = "";
 			//Look for matching condition
-			if ((pStatus == null || pStatus.toUpperCase().equals(cStatus.toUpperCase())) && (pDesc == null
-
-					 || pDesc.toUpperCase().equals(cDesc.toUpperCase())) && (pImpact == null || pImpact.toUpperCase().equals
-
-					(cImpact.toUpperCase()))) {
+			if ((pStatus == null || pStatus.toUpperCase().equals(cStatus.toUpperCase())) && (pDesc == null || pDesc.toUpperCase().equals(cDesc.toUpperCase())) && (pImpact == null || pImpact.toUpperCase().equals(cImpact.toUpperCase()))) {
 				if (nImpact != null || nImpact != undefined)
 					thisCond.setImpactCode(nImpact);
 
@@ -42,9 +38,7 @@ function resolveCondition(pType, pStatus, pDesc, pImpact, nStatus, nImpact, nSta
 
 				thisCond.setConditionStatus(nStatus);
 
-				aa.print("Found condition needed to update: " + cDesc + " with Condition Status of "
-
-					 + nStatusType);
+				aa.print("Found condition needed to update: " + cDesc + " with Condition Status of " + nStatusType);
 
 				aa.capCondition.editCapCondition(thisCond);
 			}
