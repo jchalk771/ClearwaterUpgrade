@@ -1,5 +1,4 @@
 /*------------------------------------------------------------------------------------------------------/
-| SVN $Id: ApplicationSubmitBefore.js 6515 2012-03-16 18:15:38Z john.schomp $
 | Program : ApplicationSubmitBeforeV3.js
 | Event   : ApplicationSubmitBefore
 |
@@ -53,7 +52,7 @@ if (bzr) {
 }
 
 if (SA) {
-	eval(getScriptText("INCLUDES_ACCELA_FUNCTIONS", SA,useCustomScriptFile));
+	eval(getScriptText("INCLUDES_ACCELA_FUNCTIONS", SA));
 	eval(getScriptText("INCLUDES_ACCELA_FUNCTIONS_ASB", SA));
 	eval(getScriptText("INCLUDES_ACCELA_GLOBALS", SA));
 	eval(getScriptText(SAScript, SA));
