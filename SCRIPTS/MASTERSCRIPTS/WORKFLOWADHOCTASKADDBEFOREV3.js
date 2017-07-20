@@ -18,7 +18,7 @@
 |     will no longer be considered a "Master" script and will not be supported in future releases.  If
 |     changes are made, please add notes above.
 /------------------------------------------------------------------------------------------------------*/
-var controlString = "WorkflowTaskUpdateBefore"; 				// Standard choice for control
+var controlString = "WorkflowAdhocTaskAddBefore"; 				// Standard choice for control
 var preExecute = "PreExecuteForAfterEvents"				// Standard choice to execute first (for globals, etc)
 var documentOnly = false;						// Document Only -- displays hierarchy of std choice steps
 
