@@ -28,14 +28,18 @@ try{
 		comment("Issued Date is: " + issuedDate);
 		if (!matches(AInfo['Type of Permit'], "Fence", "Marine", "Trenching", "Underground Fire Line") &&(feeReq==true) && ((AInfo['Issued']== null )|| (issuedDate > surchargeFeeStartDate))) {
 			//branch("ES_STATE_FEE_UPDATE") - only called once, adding inline
-			feeItemArray=aa.fee.getFeeItems(capId).getOutput();
-			feeItemTotal = 0;
-			DBPR_Inv = 0;
-			DCAF_Inv = 0;
-			SurFeeDue = 0;
-			DBPR_Diff = 0;
-			DCAF_Diff = 0;
+			
+			feeItemArray=aa.fee.getFeeItems(capId).getOutput(); 
+			feeItemTotal = 0; 
+			DBPR_Inv = 0; 
+			DCAF_Inv = 0; 
+			//SurFeeDue = 0;  //REMOVED PER LYDIA 7.18.17
+			DBPR_FeeDue = 0;  //ADDED
+			DCAF_FeeDue = 0;  //ADDED
+			DBPR_Diff = 0; 
+			DCAF_Diff = 0; 
 			PermFeeTotal=0;
+			
 			if (feeItemArray) {
 				for (FI in feeItemArray) 
 					if (feeItemArray[FI].getFeeCod().equals("DBPR") && !matches(feeItemArray[FI].getFeeitemStatus(),"VOIDED","CREDITED")) 
@@ -58,7 +62,8 @@ try{
 						PermFeeTotal+=feeItemArray[FI].getFee();
 			}
 
-			if (PermFeeTotal <= 133.66) {
+			//Replacing as per Lydia 7.18.17, changes to calculation imposed by state
+			/*if (PermFeeTotal <= 133.66) {
 				SurFeeDue = 2.00;
 			}
 
@@ -69,6 +74,19 @@ try{
 			comment("Surcharge Due: " + SurFeeDue);
 			DBPR_Diff = (SurFeeDue - DBPR_Inv).toFixed(2);
 			DCAF_Diff = (SurFeeDue - DCAF_Inv).toFixed(2);
+			*/
+			
+			DBPR_FeeDue = PermFeeTotal * .01; 
+			DCAF_FeeDue = PermFeeTotal *.015;
+
+			if(DBPR_FeeDue < 2)
+				DBPR_FeeDue = 2;
+			if(DCAF_FeeDue < 2)
+				DBPR_FeeDue = 2;
+
+			DBPR_Diff = (DBPR_FeeDue - DBPR_Inv).toFixed(2); 
+			DCAF_Diff = (DCAF_FeeDue - DCAF_Inv).toFixed(2);
+			
 			comment("DBPR Difference: " + DBPR_Diff );
 			comment("DCAF Difference: " + DCAF_Diff );
 			if (DBPR_Diff > .005) {
