@@ -1,6 +1,6 @@
 /*------------------------------------------------------------------------------------------------------/
-| Program : WorkflowAdhocTaskUpdateAfterV3.0.js
-| Event   : WorkflowAdhocTaskUpdateAfter
+| Program : WorkflowAdhocTaskAddAfterV3.0.js
+| Event   : WorkflowAdhocTaskAddAfter
 |
 | Usage   : Master Script by Accela.  See accompanying documentation and release notes.
 |
