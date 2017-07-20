@@ -82,7 +82,7 @@ try{
 			if(DBPR_FeeDue < 2)
 				DBPR_FeeDue = 2;
 			if(DCAF_FeeDue < 2)
-				DBPR_FeeDue = 2;
+				DCAF_FeeDue = 2;
 
 			DBPR_Diff = (DBPR_FeeDue - DBPR_Inv).toFixed(2); 
 			DCAF_Diff = (DCAF_FeeDue - DCAF_Inv).toFixed(2);
