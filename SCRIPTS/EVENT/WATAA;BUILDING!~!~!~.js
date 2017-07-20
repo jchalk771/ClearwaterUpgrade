@@ -10,7 +10,7 @@ try{
 	}
 
 	if (!appMatch("Building/Fire/*/*") && wfTask == "Begin Reviews" && AInfo['Target'] != null) {
-		assignDueDateToTaskLevel("030001000000000", AInfo['Target']);
+		assignDueDateToTaskLevelWATAA("030001000000000", AInfo['Target']);
 	}
 	
 	if (!appMatch("Building/Fire/*/*")&& wfTask == "Response to Comments") {

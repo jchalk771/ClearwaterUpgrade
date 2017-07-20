@@ -4,7 +4,7 @@
 try{
 
 	if (wfTask == "Begin Reviews" && AInfo['Target'] != null) {
-		assignDueDateToTaskLevel("020001000000000", AInfo['Target']);
+		assignDueDateToTaskLevelWATAA("020001000000000", AInfo['Target']);
 	}
 
 	if (wfTask == "Response to Comments") {
