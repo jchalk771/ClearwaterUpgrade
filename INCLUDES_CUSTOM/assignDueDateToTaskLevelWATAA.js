@@ -16,7 +16,6 @@ function assignDueDateToTaskLevelWATAA(tasklevel, duedate) {
 	    if (workflowResult.getSuccess())
 	    	var wfObj = workflowResult.getOutput();
 	    else {
-	    	//@TODO: what's s_capResult? Potential error?
 	    	logMessage("**ERROR: Failed to get workflow object: " +	s_capResult.getErrorMessage());
 	    	return false;
 	    }
