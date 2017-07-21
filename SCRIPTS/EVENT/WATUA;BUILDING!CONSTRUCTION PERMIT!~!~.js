@@ -23,7 +23,7 @@ try{
 
 	if (wfTask =="Online Customer Request" && wfStatus == "Log - Response to Comments") {
 		addAdHocTask("ADHOC_TASKS","Response to Comments","Another Cycle Begins");
-		reactivateTaskLevelWATUA("030001000000000" );
+		reactivateTaskLevelWATUA("030001000000000");
 		deactivateTask("Permit Verification");
 		updateAppStatus("In Review","Another Cycle Begins",capId);
 	}
