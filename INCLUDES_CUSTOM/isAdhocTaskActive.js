@@ -5,7 +5,7 @@
 //isTaskActive does not work when there are multiple completed tasks in wf history
 //the adhoc task can be added multiple times
 //isTaskActive returns the last value found
-//need it to tell me if any adhoc task is active
+//need it to tell me if any adhoc task is active 
 //@TODO - this version has comments left in that are commented out in other events.  
 //Revisit and disable comments as desired.
 function isAdhocTaskActive(wfstr){
