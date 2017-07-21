@@ -1,6 +1,11 @@
 //custom function
 //jec 170706 conversion begin
 //version from WATUB @TODO - Consider consolidating with isActiveAdhocTasks and updating calls
+//@TODO - notes from WTUB
+//isTaskActive does not work when there are multiple completed tasks in wf history
+//the adhoc task can be added multiple times
+//isTaskActive returns the last value found
+//need it to tell me if any adhoc task is active
 function isAdhocTaskActive(wfstr){
 	try{
 		var useProcess = false;
