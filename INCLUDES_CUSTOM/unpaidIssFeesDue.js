@@ -39,8 +39,7 @@ function unpaidIssFeesDue(capId) {
 				comment("********* Fee Amount is " + thisFee.amount);
 				comment("********* Fee Amount Paid is " + thisFee.amountPaid);
 
-				if (matches(thisFee.code, "DVBW", "IIMP", "LIMP", "OIMP", "PRKG", "RILF", "RIMP",
-						"SDWK", "TIMD", "TIMP", "TRFU", "WIMP", "SIMP", "FPLN")) {
+				if (matches(thisFee.code, "DVBW", "IIMP", "LIMP", "OIMP", "PRKG", "RILF", "RIMP", "SDWK", "TIMD", "TIMP", "TRFU", "WIMP", "SIMP", "FPLN")) {
 					impactFeeFlag = true;
 				} else {
 					impactFeeFlag = false;
