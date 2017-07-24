@@ -48,7 +48,7 @@ function checkForDuplicateComment(vStdCommentType, revType, revComment) {
 		return duplicateComment;  
 		comment("DupComment Returned: " + duplicateComment);  
 	}catch(err){  
-		logDebug("An error occurred in custom function CheckForDuplicateComment Conversion: " + err. message);  
+		logDebug("An error occurred in custom function checkForDuplicateComment Conversion: " + err. message);  
 		logDebug(err.stack);  
 	}  
 }  
