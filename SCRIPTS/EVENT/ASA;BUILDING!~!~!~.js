@@ -16,22 +16,26 @@ try{
 		//branch("ES_ADD_NOC")
 		if (AInfo['Type of Permit'] == "A/C Change Out" && estValue > 7500 && AInfo['NOC Received']!= "CHECKED") {
 			addStdCondition("DRT Review","NOC","Not Met");
-			aa.debug("*********************ES_ADD_NOC","Line 1");
+			//aa.debug("*********************ES_ADD_NOC","Line 1");
+			aa.debug("*********************ASA:Building/*/*/*","Line 20");
 		}
 
 		if (AInfo['Type of Permit'] == "A/C Change Out" && estValue > 7500 && AInfo['NOC Received']== "CHECKED") {
 			addStdCondition("DRT Review","NOC","Met");
-			aa.debug("*********************ES_ADD_NOC","Line 2");
+			//aa.debug("*********************ES_ADD_NOC","Line 2");
+			aa.debug("*********************ASA:Building/*/*/*","Line 26");
 		}
 
 		if (AInfo['Type of Permit'] != "A/C Change Out" && AInfo['Type of Permit'] != "" && AInfo['Type of Permit'] != null && estValue > 2500 && AInfo['NOC Received'] != "CHECKED") {
 			addStdCondition("DRT Review","NOC","Not Met");
-			aa.debug("*********************ES_ADD_NOC","Line 3");
+			//aa.debug("*********************ES_ADD_NOC","Line 3");
+			aa.debug("*********************ASA:Building/*/*/*","Line 32");
 		}
 
 		if (AInfo['Type of Permit'] != "A/C Change Out" && AInfo['Type of Permit'] != "" && AInfo['Type of Permit'] != null && estValue > 2500 && AInfo['NOC Received'] == "CHECKED") {
 			addStdCondition("DRT Review","NOC","Met");
-			aa.debug("*********************ES_ADD_NOC","Line 4");
+			//aa.debug("*********************ES_ADD_NOC","Line 4");
+			aa.debug("*********************ASA:Building/*/*/*","Line 38");
 		}
 	}
 

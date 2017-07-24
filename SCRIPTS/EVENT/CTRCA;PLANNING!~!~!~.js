@@ -10,7 +10,8 @@ try{
 		updateShortNotes(String(sNotes).substring(0,200),capId);
 		//branch("ES_CK_SUBMITTAL_DATE")
 		checkSubmittalDate();
-		aa.debug("Line 16 of CTRCA","Made  it here.");
+		//aa.debug("Line 16 of CTRCA","Made  it here.");
+		aa.debug("Line 14 of CTRCA:Planning/*/*/*, Made  it here.");
 	}
 
 }catch(err){

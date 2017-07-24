@@ -11,7 +11,8 @@ try{
 		if (matches(eAddress, "No email.", "Owner-Builder") && AInfo['Owner Email'] != null) {
 			eAddress = AInfo['Owner Email'];
 			showMessage = true;
-			comment("Line 2, email is " + eAddress);
+			//comment("Line 2, email is " + eAddress);
+			comment("WTUA:Planning/Tree/*/*, Line 15, email is " + eAddress);
 		}
 
 		var cAddr = getPrimaryAddress();
