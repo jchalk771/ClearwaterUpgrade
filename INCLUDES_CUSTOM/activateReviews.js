@@ -14,7 +14,8 @@ function activateReviews(){
 		}
 
 		if (isTaskActive("Application Submittal")&& wfStatus =="Log - Begin Reviews") {
-			closeTask("Application Submittal","Route to Review", "Updated by WFAdhocTUA, line 4");
+			//closeTask("Application Submittal","Route to Review", "Updated by WFAdhocTUA, line 4");
+			closeTask("Application Submittal","Route to Review", "Updated by activateReviews, line 18");
 		}
 
 		updateAppStatus("In Review","status set by WFAdhocUA scipt");

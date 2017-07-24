@@ -3,6 +3,7 @@
 //Checks for case created after workflow modified in PNU cases
 //If case created after workflow modification, then moves case into Abatement, Court or Code Board
 //see line 33 of std choice
+//see line 6 of WTUA:CodeCompliance/*/PNU/*
 function isNewPNU(){
 	try{
 

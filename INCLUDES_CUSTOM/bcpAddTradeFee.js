@@ -65,8 +65,10 @@ function bcpAddTradeFee(){
 			updateFee("PERMT","B_OTC","FINAL",(parseInt(AInfo['Number of Trades'])-1)*30,"N","Y");
 		}
 
-		aa.debug("Line 13 of ES_BCP_ADD_TRADE_FEE","Trade Fee is " + feeAmount("PERMT")+". Fee Balance is " + feeBalance("PERMT"));
-		aa.debug("Line 14 of ES_BCP_ADD_TRADE_FEE","TradeNumber" + AInfo['Number of Trades']);
+		//aa.debug("Line 13 of ES_BCP_ADD_TRADE_FEE","Trade Fee is " + feeAmount("PERMT")+". Fee Balance is " + feeBalance("PERMT"));
+		aa.debug("Line 69 of bcpAddTradeFee","Trade Fee is " + feeAmount("PERMT")+". Fee Balance is " + feeBalance("PERMT"));
+		//aa.debug("Line 14 of ES_BCP_ADD_TRADE_FEE","TradeNumber" + AInfo['Number of Trades']);
+		aa.debug("Line 71 of bcpAddTradeFee","TradeNumber" + AInfo['Number of Trades']);
 		if (AInfo['Online Permit Type'] =="Demolition" || AInfo['Type of Permit'] == "Demo - Building") {
 			editAppSpecific("BLD","CHECKED");
 		}
