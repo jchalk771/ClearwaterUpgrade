@@ -40,7 +40,7 @@ try{
 		editAppSpecific("Bin Number","EDR");
 		editAppSpecific("Walk-Thru", "No");
 		editAppSpecific("Target", vDueDate);
-		assignDueDateToTaskLevel("030001000000000", vDueDate);
+		assignDueDateToTaskLevelWTUA("030001000000000", vDueDate);
 	}
 
 	if (wfTask =="Online Customer Request" && wfStatus == "Log - Response to Comments") {
