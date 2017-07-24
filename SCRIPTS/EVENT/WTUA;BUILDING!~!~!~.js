@@ -36,7 +36,7 @@ try{
 	//end ES_ADD_ASI_DATES
 	
 	if (!appMatch("Building/Fire/*/*") && !matches(wfTask,"Application Submittal","Permit Verification", "Active") && matches(capStatus,"In Review", "Revisions Needed", "Review Approved")) {
-		var vRevStatus = UpdateCapReviewStatus(capId,"03");
+		var vRevStatus = updateCapReviewStatus(capId,"03");
 		comment("Review Status: "+ vRevStatus);
 	}
 	

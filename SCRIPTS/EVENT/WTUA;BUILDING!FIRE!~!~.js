@@ -4,7 +4,7 @@
 try{
 
 	if (!matches(wfTask,"Application Submittal","Permit Verification", "Active") && matches(capStatus,"In Review", "Revisions Needed", "Review Approved")) {
-		var vRevStatus = UpdateCapReviewStatus(capId,"02");
+		var vRevStatus = updateCapReviewStatus(capId,"02");
 		comment("Review Status: "+ vRevStatus);
 	}
 
