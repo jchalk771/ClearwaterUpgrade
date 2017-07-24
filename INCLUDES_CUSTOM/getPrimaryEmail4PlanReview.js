@@ -1,6 +1,6 @@
 //custom function
 //jec 170717 conversion begin
-//Comments in this version are still enabled, disabled in some events but not all
+//@ToDO - Comments in this version are still enabled, disabled in some events but not all
 //disable as appropriate
 function getPrimaryEmail4PlanReview(capId){
 	try{

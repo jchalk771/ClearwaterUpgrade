@@ -1,7 +1,7 @@
 //custom function
 //jec 170706 conversion begin
 //Reactivate the current task step, all tasks that were active
-//noted in ACUB
+//noted in WATUA
 
 function assignDueDateToTaskLevel(tasklevel, duedate) {
 	try{

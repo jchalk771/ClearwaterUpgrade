@@ -1,6 +1,6 @@
 //custom function
 //jec 170706 conversion begin
-//Different from ACUB, renaming
+//Different from WATUA, renaming
 // ///////////////////////////////////////////////////////////////////
 // Assign a due date to the task level supplied
 // Added 04-25-2010

@@ -1,6 +1,6 @@
 //custom function
 //jec 170706 conversion begin
-//Different from ACUB and WATAA, renaming
+//Different from WATUA and WATAA, renaming
 //@TODO - Examine differences and consider coming up with one universal version and replace all calls
 /////////////////////////////////////////////////////////////////////
 //Assign a due date to the task level supplied
