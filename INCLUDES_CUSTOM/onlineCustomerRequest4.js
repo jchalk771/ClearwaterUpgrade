@@ -33,7 +33,7 @@ function onlineCustomerRequest4(docModel, documentModelArray) {
 	    }
 	    return "Hello";
 	}catch(err){
-		logDebug("An error occurred in custom function functionName Conversion: " + err. message);
+		logDebug("An error occurred in custom function onlineCustomerRequest4 Conversion: " + err. message);
 		logDebug(err.stack);
 	}
 }
