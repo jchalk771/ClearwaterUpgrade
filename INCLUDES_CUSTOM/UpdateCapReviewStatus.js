@@ -1,6 +1,6 @@
 //custom function
 //jec 170724 conversion begin
-function UpdateCapReviewStatus(capId, taskLevel){
+function updateCapReviewStatus(capId, taskLevel){
 	try{
 
 		var useProcess = false;
@@ -113,7 +113,7 @@ function UpdateCapReviewStatus(capId, taskLevel){
 		return planRevFlag;
 
 	}catch(err){
-		logDebug("An error occurred in custom function UpdateCapReviewStatus Conversion: " + err. message);
+		logDebug("An error occurred in custom function updateCapReviewStatus Conversion: " + err. message);
 		logDebug(err.stack);
 	}
 }
