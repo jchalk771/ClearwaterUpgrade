@@ -1,7 +1,7 @@
 //custom function
 //jec 170724 conversion begin
 //Checks for case created after workflow modified in PNU cases
-//If case created after workflow modification, then moves case into Abatemet, Court or Code Board
+//If case created after workflow modification, then moves case into Abatement, Court or Code Board
 //see line 33 of std choice
 function isNewPNU(){
 	try{
