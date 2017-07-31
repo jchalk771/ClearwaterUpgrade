@@ -57,7 +57,7 @@ try{
 		//@emailProd - uncomment for production deployment
 			//email("john.warner@myClearwater.com","noReply@myclearwater.com", "Online - Permit " + capId.getCustomID(), "Document was uploaded today by "+eAddress );
 			//What about this one?
-			email("lydia.moreda@myClearwater.com","noReply@myclearwater.com","Uploaded - Permit " + capId.getCustomID(), "Document was uploaded today by "+eAddress );
+			//email("lydia.moreda@myClearwater.com","noReply@myclearwater.com","Uploaded - Permit " + capId.getCustomID(), "Document was uploaded today by "+eAddress );
 	}
 
 }catch(err){
