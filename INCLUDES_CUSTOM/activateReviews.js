@@ -141,22 +141,19 @@ function activateReviews(){
 		//@TODO - Lookup function, split and loop here?  noReply global?
 		if (AInfo['Online Permit Type'] == "Fence") {
 			var permitNbr = capId.getCustomID();
-			email("ivan.dimitrov@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
-			email("Luke.Moody@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
-			email("Jeremy.Shaw@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
-		}
-
-		if (AInfo['Online Permit Type'] == "Fence") {
-			var permitNbr = capId.getCustomID();
-			email("Jason.Alber@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
-			email("Christopher.Melone@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
-			email("Michael.Kirn@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
-		}
-
-		if (AInfo['Online Permit Type'] == "Fence") {
-			var permitNbr = capId.getCustomID();
-			email("Bradford.Cheek@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
-			email("lydia.moreda@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
+			//@emailTest - comment for production deployment
+				email(testMasterAddress,"noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
+			//@emailProd - uncomment for production deployment
+				//email("ivan.dimitrov@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
+				//email("Luke.Moody@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
+				//email("Jeremy.Shaw@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
+				//email("Jason.Alber@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
+				//email("Christopher.Melone@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
+				//email("Michael.Kirn@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
+				//email("Bradford.Cheek@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
+				
+				//this one is redundant while Lydia is the test master
+				//email("lydia.moreda@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
 			aa.debug("***********Debug ","Emails to ENG were sent.");
 		}
 		
