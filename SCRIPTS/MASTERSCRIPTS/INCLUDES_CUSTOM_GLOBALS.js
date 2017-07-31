@@ -7,3 +7,5 @@ if (currentUserID == "JWARNER") showDebug = true;
 if (currentUserID == "MLOUIS") 	showDebug = true;
 if (currentUserID == "JCHALK")  showDebug = true;
 if (currentUserID == "DHEDD")   showDebug = true;
+
+var testMasterAddress = "Lydia.Moreda@myclearwater.com";
