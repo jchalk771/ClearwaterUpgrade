@@ -3,7 +3,7 @@
 //function comes from ASA
 //the addStdCondition function in includes Accela functions does not take the status arguement
 // optional status code, cap id
-function function addStdConditionCLW(cType, cDesc){
+function addStdConditionCLW(cType, cDesc){
 	try{
 
 		var useStatus = "Applied";
