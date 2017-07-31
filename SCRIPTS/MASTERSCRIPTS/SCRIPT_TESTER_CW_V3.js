@@ -1,9 +1,9 @@
-var myCapId = "OB17-0045";
+var myCapId = "TRE2017-07051";
 var myUserId = "ADMIN";
 
 /* ASA  */  	//var eventName = "ApplicationSubmitAfter";
 /* ASIUA */		//var eventName = "ApplicationSpecificInfoUpdateAfter";
-/* WTUA */		//var eventName = "WorkflowTaskUpdateAfter";  wfTask = "Final Processing";	  wfStatus = "Permit Issued";  wfDateMMDDYYYY = "02/08/2016";
+/* WTUA */		var eventName = "WorkflowTaskUpdateAfter";  wfTask = "Staff Comment";	  wfStatus = "Denied";  wfDateMMDDYYYY = "02/08/2016"; wfComment = "Comment";
 /* IRSA */		//var eventName = "InspectionResultSubmitAfter" ; inspResult = "Failed"; inspComment = "Comment";  inspType = "Roofing"
 /* ISA  */		//var eventName = "InspectionScheduleAfter" ; inspType = "Roofing"
 /* ISB ALT */	//var eventName = "InspectionMultipleScheduleBefore"; inspType = "Set Backs"
