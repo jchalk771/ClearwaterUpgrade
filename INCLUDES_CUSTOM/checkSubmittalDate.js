@@ -56,13 +56,7 @@ function checkSubmittalDate(){
 		noticeParams.put("$$altID$$", permitNbr);
 		//comment("Made it to line 17");
 		comment("Made it to line 58 of checkSubmittalDate");
-		
-		//@emailTest - comment for production deployment
-			sendNotification("noReply@myClearwater.com", testMasterAddress, "","ACA_MESSAGE_CK_SUBMITTAL_DATE", noticeParams, rptArray);
-		//@emailProd - uncomment for production deployment
-			//sendNotification("noReply@myClearwater.com", eAddress, "","ACA_MESSAGE_CK_SUBMITTAL_DATE", noticeParams, rptArray);
-		
-			
+		sendNotification("noReply@myClearwater.com", eAddress, "","ACA_MESSAGE_CK_SUBMITTAL_DATE", noticeParams, rptArray);
 		email("lydia.moreda@myClearwater.com","aemoreda@aol.com", "Planning Submittal - " + permitNbr, "Your planning application was submitted on " + vAppDate + ". " + vMsg);
 		//aa.debug("Line 13", "Made it here");
 		aa.debug("Line 62 of checkSubmittalDate", "Made it here");
