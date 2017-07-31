@@ -17,7 +17,10 @@ try{
 	if (wfTask == "Active Permit" && (wfStatus == "Completed" || wfStatus == "Certificate of Occupancy" || wfStatus == "Certificate of Completion" || wfStatus == "Temp Certificate of Occupancy")&& matches(AInfo['Replacement Trees Required'],"CHECKED") && !checkInspectionResult("733 Tree Replacement","Pass")) {
 		showMessage = true;
 		comment("Tree Replacement inspection is needed before this case can be closed.");
-		email("Matthew.Anderson1@myClearwater.com","Lydia.Moreda@myClearwater.com","Permit Missing Tree Replacement Inspection","Permit (" + capIDString + ") needs Tree Replacement before it can be Completed.");
+		//@emailTest - comment for production deployment
+			email(testMasterAddress,"Lydia.Moreda@myClearwater.com","Permit Missing Tree Replacement Inspection","Permit (" + capIDString + ") needs Tree Replacement before it can be Completed.");
+		//@emailProd - uncomment for production deployment
+			//email("Matthew.Anderson1@myClearwater.com","Lydia.Moreda@myClearwater.com","Permit Missing Tree Replacement Inspection","Permit (" + capIDString + ") needs Tree Replacement before it can be Completed.");
 		cancel = true;
 	}
 	
