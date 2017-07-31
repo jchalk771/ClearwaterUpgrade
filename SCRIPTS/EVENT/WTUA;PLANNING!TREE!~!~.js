@@ -34,7 +34,8 @@ try{
 			if (wfComment !=null) noticeParams.put("$$wfComment$$", wfComment);
 			comment("Case Nbr is "+permitNbr);
 			emailRpt_Save2Case("TreePermit",permitNbr, rptParams, noticeParams, eAddress, noticeTemp);
-			}
+		}
+		logDebug("testMasterAddress is: " + testMasterAddress);
 	}
 	
 }catch(err){
