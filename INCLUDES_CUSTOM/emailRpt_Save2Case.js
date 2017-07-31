@@ -60,11 +60,7 @@ function emailRpt_Save2Case(rptName, pNbr, rptParams, noteParams, emailTo, templ
 					var emailResult = null;
 					//Must use Communication Mngr to use this object
 					//emailResult = aa.document.sendEmailAndSaveAsDocument(emailFrom, emailTo, emailCC, templateName, params, capIDScriptModel, reportFile);
-					
-					//@emailTest - comment for production deployment
-						emailResult = aa.document.sendEmailAndSaveAsDocument("noReply@myclearwater.com", testMasterAddress, "", templateName, noteParams, capIDScriptModel, reportFiles);
-					//@emailProd - uncomment for production deployment
-						//emailResult = aa.document.sendEmailAndSaveAsDocument("noReply@myclearwater.com", emailTo, "", templateName, noteParams, capIDScriptModel, reportFiles);
+					emailResult = aa.document.sendEmailAndSaveAsDocument("noReply@myclearwater.com", emailTo, "", templateName, noteParams, capIDScriptModel, reportFiles);
 
 					if (emailResult.getSuccess()) {
 						logDebug("Sent email successfully!");
