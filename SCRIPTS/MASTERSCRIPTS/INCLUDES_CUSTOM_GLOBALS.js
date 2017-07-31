@@ -8,4 +8,5 @@ if (currentUserID == "MLOUIS") 	showDebug = true;
 if (currentUserID == "JCHALK")  showDebug = true;
 if (currentUserID == "DHEDD")   showDebug = true;
 
-var testMasterAddress = "Lydia.Moreda@myClearwater.com";
+//var testMasterAddress = "Lydia.Moreda@myClearwater.com";
+var testMasterAddress = "jchalk@accela.com";
