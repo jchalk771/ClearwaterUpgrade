@@ -5,7 +5,7 @@ if (currentUserID == "AWILHELM") showDebug = true;
 if (currentUserID == "LMOREDA") showDebug = true;
 if (currentUserID == "JWARNER") showDebug = true;
 if (currentUserID == "MLOUIS") 	showDebug = true;
-if (currentUserID == "JCHALK")  showDebug = false;
+if (currentUserID == "JCHALK")  showDebug = true;
 if (currentUserID == "DHEDD")   showDebug = true;
 
 //testMasterAddress = "Lydia.Moreda@myClearwater.com";
