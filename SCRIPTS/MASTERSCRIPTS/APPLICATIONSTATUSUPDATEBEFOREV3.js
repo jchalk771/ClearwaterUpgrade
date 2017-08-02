@@ -135,7 +135,7 @@ if (debug.indexOf("**ERROR") > 0) {
 	aa.env.setValue("ScriptReturnMessage", debug);
 } else {
 	if (cancel) {
-		aa.env.setValue("ScriptReturnCode", "1");
+		aa.env.setValue("ScriptReturnCode", "-1");
 		if (showMessage)
 			aa.env.setValue("ScriptReturnMessage", "<font color=red><b>Action Cancelled</b></font><br><br>" + message);
 		if (showDebug)
