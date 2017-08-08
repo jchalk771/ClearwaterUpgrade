@@ -7,6 +7,7 @@ if (currentUserID == "JWARNER") showDebug = true;
 if (currentUserID == "MLOUIS") 	showDebug = true;
 if (currentUserID == "JCHALK")  showDebug = true;
 if (currentUserID == "DHEDD")   showDebug = true;
+if (currentUserID == "ADMIN" && vEventName == "ConvertToRealCapBefore")	showDebug = true;
 
 //testMasterAddress = "Lydia.Moreda@myClearwater.com";
 testMasterAddress = "jchalk@accela.com; Lydia.Moreda@myClearwater.com";
