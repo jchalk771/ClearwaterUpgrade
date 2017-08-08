@@ -4,7 +4,7 @@
 try{
 
 	//@TODO - Note use of branchTask ok for classic workflows.  Not so great for new designer workflows
-	if (isTaskStatus("Application Submittal","Accepted") && AInfo['Type']=="Address Change Receipt") {
+	if (isTaskStatus("Application Submittal","Accepted") && AInfo['Type of Permit']=="Address Change Receipt") {
 		branchTask("Active Permit","Completed","Updated by script");
 		deactivateTask("Permit Verification");
 	}
