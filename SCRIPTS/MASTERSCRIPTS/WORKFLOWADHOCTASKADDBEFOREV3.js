@@ -140,7 +140,7 @@ logDebug("wfStep = " + wfStep);
 logDebug("wfProcess = " + wfProcess);
 logDebug("wfStatus = " + wfStatus);
 logDebug("wfUserId = " + wfUserId);
-logDebug("wfTaskObj = " + wfTaskObj.getClass());
+//logDebug("wfTaskObj = " + wfTaskObj.getClass());
 
 /* Added for version 1.7 */
 var wfStaffUserID = aa.env.getValue("StaffUserID");
