@@ -14,7 +14,6 @@ try{
 
 	comment("Fee Reqd: " + feeReq);
 	
-	//@TODO: Where is this function addStdConditionCLW?
 	if (!appHasCondition("Building",null,"Fire - Final Inspection Required") && feeItemArray) {
 		for (FI in feeItemArray) 
 			if (feeItemArray[FI].getFeeCod().equals("FCOO"))
