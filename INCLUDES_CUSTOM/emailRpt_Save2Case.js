@@ -67,6 +67,7 @@ function emailRpt_Save2Case(rptName, pNbr, rptParams, noteParams, emailTo, templ
 						comment("Email sent successfully!");
 						return true;
 					} else {
+						//@TODO - result is undefined.  Did you mean emailResult.getErrorType()?
 						logDebug("Failed to send mail. - " + result.getErrorType());
 						comment("Failed to send mail. - " + result.getErrorType());
 						return false;
