@@ -7,7 +7,7 @@ function activateReviews(){
 		comment("Review Start Date is " + revStartDate);
 		var vStartTime = formatDateTime(revStartDate);
 		comment("Hello, the start time is " + vStartTime);
-		aa.debug("***********Debug ","RevStartDate is " + vStartTime);
+		logDebug("***********Debug ","RevStartDate is " + vStartTime);
 		if (isTaskActive("Application Submittal")&& wfStatus =="Walk Through Review") {
 			closeTask("Application Submittal","Online Submittal Processed", "Place review in Online Reviews task list");
 			editAppSpecific("Bin Number","ACA");
@@ -154,7 +154,7 @@ function activateReviews(){
 				
 				//this one is redundant while Lydia is the test master
 				//email("lydia.moreda@myClearwater.com","noReply@myclearwater.com", "New Online Fence Permit - "+ permitNbr, "Please check your task list.");
-			aa.debug("***********Debug ","Emails to ENG were sent.");
+			logDebug("***********Debug ","Emails to ENG were sent.");
 		}
 		
 	}catch(err){
