@@ -9,12 +9,13 @@ try{
 	updateWorkDesc(bDesc,capId);
 	updateShortNotes(AInfo['Online Permit Type'],capId);
 	
-	email("jchalk@accela.com","jchalk@accela.com", "Clearwater ACA Debug Message", "I got to line 12");
-		
+			
 	editAppSpecific("Received",dateAdd(null,0));
 	editAppSpecific("Expired",dateAddMonths(null,6));
 	editAppSpecific("Walk-Thru", "Yes");
 		
+	email("jchalk@accela.com","jchalk@accela.com", "Clearwater ACA Debug Message", "I got to line 17");
+	
 	//aa.debug("CTRCA Line 20 *****","Branches to ES_BCP_ADD_TRADE_FEE");
 	aa.debug("CTRCA:Building/Construction Permit/*/* Line 17 *****, Calls bcpAddTradeFee");
 	//branch("ES_BCP_ADD_TRADE_FEE")
