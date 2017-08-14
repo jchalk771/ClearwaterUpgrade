@@ -21,7 +21,7 @@ try{
 		comment("Email is "+ eAddress);
 		var vTaskActive = isActiveAdhocTask("Online Customer Request");
 		comment("is the task active?" + vTaskActive);
-		aa.debug("******************Debugging**************","Is task active?" + vTaskActive + ". Doc Source is " + documentUploadedFrom);
+		logDebug("******************Debugging**************","Is task active?" + vTaskActive + ". Doc Source is " + documentUploadedFrom);
 	}
 
 	
