@@ -75,6 +75,8 @@ function bcpAddTradeFee(){
 			editAppSpecific("BLD","CHECKED");
 		}
 		
+		email("jchalk@accela.com","jchalk@accela.com", "Clearwater ACA Debug Message", "I made it to the end of bcpAddTradeFee.");
+		
 	}catch(err){
 		logDebug("An error occurred in custom function bcpAddTradeFee Conversion: " + err. message);
 		logDebug(err.stack);
