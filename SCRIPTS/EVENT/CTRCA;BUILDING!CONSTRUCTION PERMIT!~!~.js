@@ -14,12 +14,13 @@ try{
 	editAppSpecific("Expired",dateAddMonths(null,6));
 	editAppSpecific("Walk-Thru", "Yes");
 		
-	email("jchalk@accela.com","jchalk@accela.com", "Clearwater ACA Debug Message", "I got to line 17");
-	
 	//aa.debug("CTRCA Line 20 *****","Branches to ES_BCP_ADD_TRADE_FEE");
 	aa.debug("CTRCA:Building/Construction Permit/*/* Line 17 *****, Calls bcpAddTradeFee");
 	//branch("ES_BCP_ADD_TRADE_FEE")
 	bcpAddTradeFee();
+	
+	email("jchalk@accela.com","jchalk@accela.com", "Clearwater ACA Debug Message", "I made it through bcpAddTradeFee.");
+	
 		
 	var permitNbr = capId.getCustomID();
 	email("lydia.moreda@myClearwater.com","noReply@myclearwater.com", "New Online Permit - "+ permitNbr, "A new permit application has been submitted! Verify business rules are processed correctly.");
