@@ -19,9 +19,6 @@ try{
 	//branch("ES_BCP_ADD_TRADE_FEE")
 	bcpAddTradeFee();
 	
-	email("jchalk@accela.com","jchalk@accela.com", "Clearwater ACA Debug Message", "I made it through bcpAddTradeFee.");
-	
-		
 	var permitNbr = capId.getCustomID();
 	email("lydia.moreda@myClearwater.com","noReply@myclearwater.com", "New Online Permit - "+ permitNbr, "A new permit application has been submitted! Verify business rules are processed correctly.");
 	
