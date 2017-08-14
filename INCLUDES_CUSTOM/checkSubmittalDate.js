@@ -59,7 +59,7 @@ function checkSubmittalDate(){
 		sendNotification("noReply@myClearwater.com", eAddress, "","ACA_MESSAGE_CK_SUBMITTAL_DATE", noticeParams, rptArray);
 		email("lydia.moreda@myClearwater.com","aemoreda@aol.com", "Planning Submittal - " + permitNbr, "Your planning application was submitted on " + vAppDate + ". " + vMsg);
 		//aa.debug("Line 13", "Made it here");
-		aa.debug("Line 62 of checkSubmittalDate", "Made it here");
+		logDebug("Line 62 of checkSubmittalDate", "Made it here");
 		
 		//@emailTest - comment for production deployment
 			email(testMasterAddress,"NoReply@myclearwater.com", "Planning Submittal - "+ permitNbr, "Your planning application was submitted on " + vAppDate + ". " + vMsg);
@@ -67,7 +67,7 @@ function checkSubmittalDate(){
 			//email("sherry.watkins@myClearwater.com","NoReply@myclearwater.com", "Planning Submittal - "+ permitNbr, "Your planning application was submitted on " + vAppDate + ". " + vMsg);
 		
 		//aa.debug("Line 13", "Made it here");
-		aa.debug("Line 65 of checkSubmittalDate", "Made it here");
+		logDebug("Line 65 of checkSubmittalDate", "Made it here");
 		
 	}catch(err){
 		logDebug("An error occurred in custom function checkSubmittalDate Conversion: " + err. message);
