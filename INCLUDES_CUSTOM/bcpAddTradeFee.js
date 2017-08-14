@@ -66,14 +66,15 @@ function bcpAddTradeFee(){
 		}
 
 		//aa.debug("Line 13 of ES_BCP_ADD_TRADE_FEE","Trade Fee is " + feeAmount("PERMT")+". Fee Balance is " + feeBalance("PERMT"));
-		aa.debug("Line 69 of bcpAddTradeFee","Trade Fee is " + feeAmount("PERMT")+". Fee Balance is " + feeBalance("PERMT"));
-		email("jchalk@accela.com","jchalk@accela.com", "Clearwater ACA Debug Message", "I'm cool with aa.debug.");
+		aa.debug("Line 69 of bcpAddTradeFee, Trade Fee is: " + feeAmount("PERMT") + ". Fee Balance is: " + feeBalance("PERMT"));
 		
 		//aa.debug("Line 14 of ES_BCP_ADD_TRADE_FEE","TradeNumber" + AInfo['Number of Trades']);
-		aa.debug("Line 71 of bcpAddTradeFee","TradeNumber" + AInfo['Number of Trades']);
+		aa.debug("Line 72 of bcpAddTradeFee, TradeNumber: " + AInfo['Number of Trades']);
+		
 		if (AInfo['Online Permit Type'] =="Demolition" || AInfo['Type of Permit'] == "Demo - Building") {
 			editAppSpecific("BLD","CHECKED");
 		}
+		
 	}catch(err){
 		logDebug("An error occurred in custom function bcpAddTradeFee Conversion: " + err. message);
 		logDebug(err.stack);
