@@ -5,7 +5,7 @@ try{
 	
 	var bDesc ="Online Permit - " +  AInfo['Type of Online Permit'] + " - " + workDescGet(capId);
 	//aa.debug("CTRCA - Line 5","bdesc is "+ bDesc);
-	aa.debug("CTRCA:Building/Over the Counter - Line 8","bdesc is "+ bDesc);
+	logDebug("CTRCA:Building/Over the Counter - Line 8","bdesc is "+ bDesc);
 	updateWorkDesc(bDesc,capId);
 	updateShortNotes(AInfo['Type of Online Permit'],capId);
 	setPrimaryLicProf(capId);
