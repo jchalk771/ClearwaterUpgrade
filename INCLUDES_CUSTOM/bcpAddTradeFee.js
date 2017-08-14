@@ -58,6 +58,7 @@ function bcpAddTradeFee(){
 
 		if (tradeCount > 0) {
 			editAppSpecific("Number of Trades",parseInt(tradeCount));
+			email("jchalk@accela.com","jchalk@accela.com", "Clearwater ACA Debug Message", "I made it to line 61 of bcpAddTradeFee.");
 			updateFee("PERMT","B_NCC","FINAL",(parseInt(tradeCount)-1)*30,"N","Y");
 		}
 
