@@ -59,8 +59,6 @@ function bcpAddTradeFee(){
 		if (tradeCount > 0) {
 			editAppSpecific("Number of Trades",parseInt(tradeCount));
 			updateFee("PERMT","B_NCC","FINAL",(parseInt(tradeCount)-1)*30,"N","Y");
-			email("jchalk@accela.com","jchalk@accela.com", "Clearwater ACA Debug Message", "I made it to line 62 of bcpAddTradeFee.");
-			
 		}
 
 		if (appMatch("Building/Over the Counter/*/*") &&AInfo['Number of Trades']>1) {
@@ -69,6 +67,8 @@ function bcpAddTradeFee(){
 
 		//aa.debug("Line 13 of ES_BCP_ADD_TRADE_FEE","Trade Fee is " + feeAmount("PERMT")+". Fee Balance is " + feeBalance("PERMT"));
 		aa.debug("Line 69 of bcpAddTradeFee","Trade Fee is " + feeAmount("PERMT")+". Fee Balance is " + feeBalance("PERMT"));
+		email("jchalk@accela.com","jchalk@accela.com", "Clearwater ACA Debug Message", "I'm cool with aa.debug.");
+		
 		//aa.debug("Line 14 of ES_BCP_ADD_TRADE_FEE","TradeNumber" + AInfo['Number of Trades']);
 		aa.debug("Line 71 of bcpAddTradeFee","TradeNumber" + AInfo['Number of Trades']);
 		if (AInfo['Online Permit Type'] =="Demolition" || AInfo['Type of Permit'] == "Demo - Building") {
