@@ -71,11 +71,11 @@ function bcpAddTradeFee(){
 		//aa.debug("Line 14 of ES_BCP_ADD_TRADE_FEE","TradeNumber" + AInfo['Number of Trades']);
 		aa.debug("Line 72 of bcpAddTradeFee, TradeNumber: " + AInfo['Number of Trades']);
 		
-		if (AInfo['Online Permit Type'] =="Demolition" || AInfo['Type of Permit'] == "Demo - Building") {
-			editAppSpecific("BLD","CHECKED");
-		}
+		//if (AInfo['Online Permit Type'] =="Demolition" || AInfo['Type of Permit'] == "Demo - Building") {
+		//	editAppSpecific("BLD","CHECKED");
+		//}
 		
-		email("jchalk@accela.com","jchalk@accela.com", "Clearwater ACA Debug Message", "I made it to the end of bcpAddTradeFee.");
+		email("jchalk@accela.com","jchalk@accela.com", "Clearwater ACA Debug Message", "I don't like the last clause of bcpAddTradeFee.");
 		
 	}catch(err){
 		logDebug("An error occurred in custom function bcpAddTradeFee Conversion: " + err. message);
