@@ -5,7 +5,7 @@ try{
 
 	var bDesc = "Online Permit - " + workDescGet(capId);
 	//aa.debug("CTRCA - Line 5","bdesc is "+ bDesc);
-	aa.debug("CTRCA:Building/Construction Permit/*/* - Line 8","bdesc is "+ bDesc);
+	logDebug("CTRCA:Building/Construction Permit/*/* - Line 8","bdesc is "+ bDesc);
 	updateWorkDesc(bDesc,capId);
 	updateShortNotes(AInfo['Online Permit Type'],capId);
 	
@@ -15,7 +15,7 @@ try{
 	editAppSpecific("Walk-Thru", "Yes");
 		
 	//aa.debug("CTRCA Line 20 *****","Branches to ES_BCP_ADD_TRADE_FEE");
-	aa.debug("CTRCA:Building/Construction Permit/*/* Line 17 *****, Calls bcpAddTradeFee");
+	logDebug("CTRCA:Building/Construction Permit/*/* Line 17 *****, Calls bcpAddTradeFee");
 	//branch("ES_BCP_ADD_TRADE_FEE")
 	bcpAddTradeFee();
 	
@@ -32,14 +32,14 @@ try{
 	var revStartDate = new Date();
 	var vStartTime = formatDateTime(revStartDate);
 	comment("Hello, the start time is " + vStartTime);
-	aa.debug("***********Debug ","RevStartDate is " + vStartTime);
+	logDebug("***********Debug ","RevStartDate is " + vStartTime);
 	addAdHocTask("ADHOC_TASKS","Online Customer Request", vStartTime + " - New Case");
 	//aa.debug("**********Debug Line*************","Made it to line 6!");
-	aa.debug("**********Debug Line*************","Made it to line 34 of CTRCA:Building/Construction Permit/*/*!");
+	logDebug("**********Debug Line*************","Made it to line 34 of CTRCA:Building/Construction Permit/*/*!");
 	var eAddress = getPrimaryEmail4PlanReview(capId);
 	comment("Email is " + eAddress);
-	aa.debug("**********Debug Line*************","CapID is "+ capId);
-	aa.debug("**********Debug Line*************","eAddress is" + eAddress);
+	logDebug("**********Debug Line*************","CapID is "+ capId);
+	logDebug("**********Debug Line*************","eAddress is" + eAddress);
 	var permitNbr = capId.getCustomID();
 	var rptArray = [];
 	var noticeParams = aa.util.newHashtable();
@@ -56,13 +56,13 @@ try{
 	if (estValue > 7500 && AInfo['Online Permit Type'] =="A/C Change Out" && !appHasCondition("Online Review",null,"Recorded NOC")) {
 		addStdCondition("Online Review","Recorded NOC","Not Met");
 		//aa.debug("*********************ES_ACA_NEW_BLDG_APP, Line 11","AC changeout");
-		aa.debug("*********************CTRCA:Building/Construction Permit/*/*, Line 55","AC changeout");
+		logDebug("*********************CTRCA:Building/Construction Permit/*/*, Line 55","AC changeout");
 	}
 
 	if (estValue > 2500 &&!matches(AInfo['Online Permit Type'], "A/C Change Out") && !appHasCondition("Online Review",null,"Recorded NOC")) {
 		addStdCondition("Online Review","Recorded NOC","Not Met");
 		//aa.debug("*********************ES_ACA_NEW_BLDG_APP, Line 12","Not AC");
-		aa.debug("*********************CTRCA:Building/Construction Permit/*/*, Line 61","Not AC");
+		logDebug("*********************CTRCA:Building/Construction Permit/*/*, Line 61","Not AC");
 	}
 
 }catch(err){
