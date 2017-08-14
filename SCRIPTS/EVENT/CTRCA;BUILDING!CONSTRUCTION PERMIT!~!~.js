@@ -8,6 +8,8 @@ try{
 	aa.debug("CTRCA:Building/Construction Permit/*/* - Line 8","bdesc is "+ bDesc);
 	updateWorkDesc(bDesc,capId);
 	updateShortNotes(AInfo['Online Permit Type'],capId);
+	
+	email("jchalk@accela.com","jchalk@accela.com", "Clearwater ACA Debug Message", "I got to line 12");
 		
 	editAppSpecific("Received",dateAdd(null,0));
 	editAppSpecific("Expired",dateAddMonths(null,6));
