@@ -6,6 +6,7 @@
 includes make additions and overrides to the INCLUDES_CUSTOM script file.
 |
 | Notes   : For Application Submit Before see INCLUDES_ACCELA_FUNCTIONS_ASB
+|			Non-productized
 |
 /------------------------------------------------------------------------------------------------------*/
 
