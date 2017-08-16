@@ -8,7 +8,7 @@
 | Action# : N/A
 |
 | Notes   : Updated for Master Script 3.0, 7.6.17 - JChalk, Accela
-|			this is for reference only - not currently in use. Anelise TEst.
+|			this is for reference only - not currently in use. 
 |
 /------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------/
