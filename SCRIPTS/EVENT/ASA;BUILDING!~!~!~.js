@@ -12,6 +12,8 @@ try{
 		addStdCondition("DRT Review","Sewer Cut and Cap","Not Met");
 	}
 	
+	logDebug(aa.env.getValue("From"));
+	
 	if (!appMatch("Building/Enforcement/*/*") && aa.env.getValue("From")=="AA" && !(appHasCondition("DRT Review",null,"NOC") || appHasCondition("Online Review",null,"Recorded NOC") )) {
 		//branch("ES_ADD_NOC")
 		if (AInfo['Type of Permit'] == "A/C Change Out" && estValue > 7500 && AInfo['NOC Received']!= "CHECKED") {
