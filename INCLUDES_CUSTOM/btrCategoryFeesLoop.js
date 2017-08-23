@@ -4,7 +4,7 @@
 function btrCategoryFeesLoop(){
 	try{
 		BTRCATrow = CATEGORIES[eachrow];
-		BTRCategory = BTRCATrow["Category"];
+		BTRCategory = BTRCATrow["Category"].toString(); //Casting as string.  jec 8.23.17
 		BTRCATcode = BTRCategory.substring(0,6);
 		comment("BTRCATcode is: " + BTRCATcode);
 		BTRCATvalue = lookup("BUSINESS_TAX_CAT",BTRCATrow["Category"]);
