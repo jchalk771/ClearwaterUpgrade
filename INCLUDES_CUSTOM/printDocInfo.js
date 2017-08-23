@@ -11,20 +11,21 @@ function printDocInfo(docModelList){
 	    comment("This is iterator:" + it);
 	    while (it.hasNext()) {
 	        var docModel = it.next();
-	        aa.print("File Name[" + count + "] is:" + docModel.getFileName());
+	        //updating aa.print with logDebug - jec 8.23.17
+	        logDebug("File Name[" + count + "] is:" + docModel.getFileName());
 	        //fileNameList.push(docModel.getFileName());
-	        aa.print("File Type[" + count + "] is:" + docModel.getDocType());
+	        logDebug("File Type[" + count + "] is:" + docModel.getDocType());
 	        comment("Doc Type = " + docModel.getDocType());
-	        aa.print("EDMS Name[" + count + "] is:" + docModel.getSource());
-	        aa.print("Department[" + count + "] is:" + docModel.getDocDepartment());
-	        aa.print("Description[" + count + "] is:" + docModel.getDocDescription());
-	        aa.print("Category[" + count + "] is:" + docModel.getDocCategory());
+	        logDebug("EDMS Name[" + count + "] is:" + docModel.getSource());
+	        logDebug("Department[" + count + "] is:" + docModel.getDocDepartment());
+	        logDebug("Description[" + count + "] is:" + docModel.getDocDescription());
+	        logDebug("Category[" + count + "] is:" + docModel.getDocCategory());
 	        comment("Category = " + docModel.getDocCategory());
-	        aa.print("Document Name[" + count + "] is:" + docModel.getDocName());
-	        aa.print("Document Date[" + count + "] is:" + docModel.getFileUpLoadDate());
-	        aa.print("Document Group[" + count + "] is:" + docModel.getDocGroup());
+	        logDebug("Document Name[" + count + "] is:" + docModel.getDocName());
+	        logDebug("Document Date[" + count + "] is:" + docModel.getFileUpLoadDate());
+	        logDebug("Document Group[" + count + "] is:" + docModel.getDocGroup());
 
-	        aa.print(" ");
+	        logDebug(" ");
 	        comment("This is docArray: " + count + " " + docModel.getDocName());
 	        comment("This is docDate: " + count + " " + docModel.getFileUpLoadDate());
 	       // comment("This is docDate: " + count + " " + docModel.getDocUpLoadBy());
