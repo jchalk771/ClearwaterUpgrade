@@ -16,7 +16,7 @@ try{
 		}
 
 		//@TODO: disableDate has no default value assigned.  Potential for undefined value error.
-		todayDate = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate());
+		todayDate = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()); //Added 8.23.17 to prevent undefined todayDate variable, jec
 		if ((disableDate == null || disableDate < todayDate) && !matches(inspCode,"007","008","101","102","103","104","105","106","200","201","209","221","301","303","314","350","401","732","733","734","735") && !(checkInspectionResult("008 Elv Certificate-Under Cons","Pass") || checkInspectionResult("008 Elv Certificate-Under Cons","PASS"))) {
 			changeStatus = true;
 			addEleCert= true;
