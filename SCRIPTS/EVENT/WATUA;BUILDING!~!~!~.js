@@ -4,7 +4,7 @@
 try{
 
 	if (matches(wfTask,"Begin Reviews","Response to Comments", "Courtesy Review","Online Customer Request") && matches(wfStatus,"Applicant Notified","Pick-up letter","Pick-up Amendment","Incomplete","Outstanding Issues")) {
-		var eAddress = getPrimaryEmail4PlanReviewWATUA(capId);
+		eAddress = getPrimaryEmail4PlanReviewWATUA(capId);
 		comment("Email is " + eAddress);
 	}
 
