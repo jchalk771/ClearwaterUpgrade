@@ -60,6 +60,7 @@ try{
 	}
 
 	if (wfTask =="Permit Verification" && wfStatus == "Issue" &&  cap.isCreatedByACA()) {
+		var eAddress = getPrimaryEmail4PlanReviewWATUA(capId);  //adding for compatibility, jec 8.28.2017
 		var permitNbr = capId.getCustomID();
 		rptParams = aa.util.newHashMap();
 		rptParams.put("capid", permitNbr);
