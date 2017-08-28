@@ -3,7 +3,7 @@
 
 try{
 	
-	var eAddress = getPrimaryEmail4PlanReview(capId);  //adding for compatibility, jec 8.28.17
+	eAddress = getPrimaryEmail4PlanReview(capId);  //adding for compatibility, jec 8.28.17
 
 	if (capStatus == "Expired") {
 		showMessage = true;
