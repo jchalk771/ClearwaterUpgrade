@@ -5,7 +5,7 @@
 
 function assignDueDateToTaskLevel(tasklevel, duedate) {
 	try{
-		var workflowResult = aa.workflow.getTasks(capID);
+		var workflowResult = aa.workflow.getTasks(capId);
 		if (workflowResult.getSuccess())
 
 			var wfObj = workflowResult.getOutput();
