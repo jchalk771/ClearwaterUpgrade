@@ -41,7 +41,7 @@ try{
 	}
 	
 	if (matches(wfTask,"Begin Reviews","Response to Comments", "Courtesy Review","Online Customer Request", "Permit Verification") && matches(wfStatus,"Applicant Notified","Pick-up letter","Pick-up Amendment","Incomplete","Outstanding Issues","Issue","Walk Through Review", "NOTE", "Task Processed")) {
-		var eAddress = getPrimaryEmail4PlanReview(capId);
+		eAddress = getPrimaryEmail4PlanReview(capId);  //eliminating scope limiter to enable for followinig branches, jec 8.28.17
 		comment("Email is " + eAddress);
 	}
 	
