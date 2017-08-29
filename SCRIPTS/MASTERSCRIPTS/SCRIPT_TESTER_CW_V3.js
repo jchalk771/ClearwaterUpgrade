@@ -33,7 +33,7 @@ try {
 	//Your test code goes here or leave blank for existing event simulation.
 
 } catch (err) {
-	logDebug("A JavaScript Error occured: " + err.message + " In Line " + err.lineNumber);
+	logDebug("A JavaScript Error occurred: " + err.message + " In Line " + err.lineNumber);
 }
 
 aa.env.setValue("ScriptReturnCode", "1");
