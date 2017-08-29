@@ -7,6 +7,7 @@ try{
 		//branch("ES_BCP_ELEV_CERT_INSP")
 	
 		inspCode = inspType.substring(0,3);
+		disableDate = null;  //Adding 8.29.17 to prevent undefined disableDate error, jec
 		comment("Inspection Code is: " + inspCode);
 		if (AInfo['Disable Tie-In Req Until After'] != null) {
 			disableASI = AInfo['Disable Tie-In Req Until After'];
@@ -14,8 +15,7 @@ try{
 			disableDate = new Date( disableDateSplit[2], parseInt(disableDateSplit[0], 10) - 1, disableDateSplit[1] );
 			comment("Disable date = "  +  AInfo['Disable Tie-In Req Until After']);
 		}
-
-		//@TODO: disableDate has no default value assigned.  Potential for undefined value error.
+		
 		todayDate = new Date(startDate.getFullYear(), startDate.getMonth(), startDate.getDate()); //Added 8.23.17 to prevent undefined todayDate variable, jec
 		if ((disableDate == null || disableDate < todayDate) && !matches(inspCode,"007","008","101","102","103","104","105","106","200","201","209","221","301","303","314","350","401","732","733","734","735") && !(checkInspectionResult("008 Elv Certificate-Under Cons","Pass") || checkInspectionResult("008 Elv Certificate-Under Cons","PASS"))) {
 			changeStatus = true;
