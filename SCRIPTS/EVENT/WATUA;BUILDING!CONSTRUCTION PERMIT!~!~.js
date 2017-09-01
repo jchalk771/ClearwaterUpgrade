@@ -42,6 +42,7 @@ try{
 	}
 
 	if (wfTask =="Online Customer Request" && wfStatus == "Outstanding Issues") {
+		var eAddress = getPrimaryEmail4PlanReviewWATUA(capId);  //adding for compatibility, jec 9.1.2017
 		var permitNbr = capId.getCustomID();
 		updateTask("Application Submittal","Need Addtl Info", "", "");
 		updateAppStatus("Additional Info Required","status set by WFAdhocUA scipt");
