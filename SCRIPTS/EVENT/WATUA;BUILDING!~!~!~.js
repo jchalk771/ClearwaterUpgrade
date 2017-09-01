@@ -4,7 +4,7 @@
 try{
 
 	if (matches(wfTask,"Begin Reviews","Response to Comments", "Courtesy Review","Online Customer Request") && matches(wfStatus,"Applicant Notified","Pick-up letter","Pick-up Amendment","Incomplete","Outstanding Issues")) {
-		eAddress = getPrimaryEmail4PlanReviewWATUA(capId);  //eliminating scope limiter to enable for following branches, jec 8.28.2017
+		eAddress = getPrimaryEmail4PlanReview(capId);  //eliminating scope limiter to enable for following branches, jec 8.28.2017
 		comment("Email is " + eAddress);
 	}
 
