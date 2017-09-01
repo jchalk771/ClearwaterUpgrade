@@ -3,6 +3,11 @@
 
 try{
 
+	//Relocated out of Active Permit block so that it is available for all clauses - 9.1.17
+	eAddress = getPrimaryEmail4PlanReview(capId);
+	comment("Email is " + eAddress);
+	
+	
 	if (wfTask == "Active Permit" && matches(wfStatus,"Completed","Certificate of Occupancy", "Certificate of Completion","Temp Certificate of Occupancy")&& feeExists("FCOO","INVOICED","CREDITED")  && !checkInspectionResult("520 Fire Final","Pass")) {
 		//updateAppStatus("Active","status set by Fire Final scipt WTUA, line 13. Fire Final Inspection required before permit can be completed.");
 		updateAppStatus("Active","status set by Fire Final script WTUA:Building/Construction Permit/*/*, line 8. Fire Final Inspection required before permit can be completed.");
