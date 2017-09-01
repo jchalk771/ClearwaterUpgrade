@@ -68,8 +68,8 @@ function emailRpt_Save2Case(rptName, pNbr, rptParams, noteParams, emailTo, templ
 						return true;
 					} else {
 						//@TODO - result is undefined.  Did you mean emailResult.getErrorType()?
-						logDebug("Failed to send mail. - " + result.getErrorType());
-						comment("Failed to send mail. - " + result.getErrorType());
+						logDebug("Failed to send mail. - " + emailResult.getErrorType());  //correcting to see true nature of error when failing
+						comment("Failed to send mail. - " + emailResult.getErrorType());   //JEC,Accela 9.1.17
 						return false;
 					}
 					
