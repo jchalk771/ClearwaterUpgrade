@@ -2,7 +2,7 @@
 //jec 170706 conversion begin
 
 try{
-	if (appMatch("Building/Construction Permit/*/*")) {
+	if (appMatch("Building/Construction Permit/*/*") || appMatch("Building/Over the Counter/*/*") || appMatch("Building/Sign/*/*")) {
 		//branch("ES_ADD_BLDG_REQ_FEES")
 		addBldgReqFees();
 	}

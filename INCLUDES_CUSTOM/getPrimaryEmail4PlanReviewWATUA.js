@@ -15,7 +15,7 @@ function getPrimaryEmail4PlanReviewWATUA(capId){
 				comment("Index is " + x + "License Number is " + profArr[x].getLicenseNbr());
 				if (profArr[x].getPrintFlag() == "Y") {
 					eAddress = profArr[x].getEmail();
-					if (eAddress == null) {
+					if (eAddress == null || eAddress =="") {
 						eAddress = "No email.";
 						comment("contractor Email is" + eAddress);
 					}

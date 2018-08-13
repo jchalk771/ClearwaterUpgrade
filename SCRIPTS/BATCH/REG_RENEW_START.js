@@ -39,14 +39,14 @@ var currentUserID = aa.env.getValue("CurrentUserID");   		// Current User
 var capId;				// CapId object
 var cap;				// Cap object
 
-var emailAddress = "lydia.moreda@myclearwater.com";
+var emailAddress = "anelise.wilhelm@myclearwater.com";
 var emailText = "";
 var paramsOK = true;
 
-var IdleWorkflowNote, REGRenewalNote;
+var IdleWorkflowNote, REGCurrentYear, REGRenewalNote;
 IdleWorkflowNote = "Moved to IDLE by REG batch";
-REGRenewalNote = "(2015-2016)";
-
+REGCurrentYear = new Date().getFullYear(); 
+REGRenewalNote = "(" + REGCurrentYear + "-" + (REGCurrentYear + 1) + ")";
 
 /*------------------------------------------------------------------------------------------------------/
 | <===========Main=Loop================>

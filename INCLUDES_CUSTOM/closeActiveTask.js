@@ -24,10 +24,10 @@ function closeActiveTask(wfstr, wfstat, wfcomment, wfnote){
 
 		for (i in wfObj) {
 			var fTask = wfObj[i];
-			comment("Task Desc is " + fTask.getTaskDescription());
-			comment("Active Flag is " + fTask.getActiveFlag());
+			//comment("Task Desc is " + fTask.getTaskDescription());
+			//comment("Active Flag is " + fTask.getActiveFlag());
 			if (fTask.getTaskDescription().toUpperCase().equals(wfstr.toUpperCase()) && fTask.getActiveFlag().equals("Y") && (!useProcess || fTask.getProcessCode().equals(processName))) {
-				comment("In the update part of the function!!!!");
+				//comment("In the update part of the function!!!!");
 				var dispositionDate = aa.date.getCurrentDate();
 				var stepnumber = fTask.getStepNumber();
 				var processID = fTask.getProcessID();

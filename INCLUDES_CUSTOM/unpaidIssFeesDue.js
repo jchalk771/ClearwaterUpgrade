@@ -32,19 +32,20 @@ function unpaidIssFeesDue(capId) {
 			for (x in feeA) {
 				thisFee = feeA[x];
 
-				//logMessage("We have a fee " + thisFee.code + " status : " + thisFee.status);
-				//comment("We have a fee " + thisFee.code + " status : " + thisFee.status);
-				comment("********* Fee Code is " + thisFee.code);
-				comment("********* Fee Status is " + thisFee.status);
-				comment("********* Fee Amount is " + thisFee.amount);
-				comment("********* Fee Amount Paid is " + thisFee.amountPaid);
+				//logMessage("We have a fee " + thisFee.code + " status : " + thisFee.status); --displays to enduser and admin
+				//comment("We have a fee " + thisFee.code + " status : " + thisFee.status); --displays to enduser and admin, logDebug shows in Biz Server Log
+				//comment("********* Fee Code is " + thisFee.code);
+				
+				//comment("********* Fee Status is " + thisFee.status);
+				//comment("********* Fee Amount is " + thisFee.amount);
+				//comment("********* Fee Amount Paid is " + thisFee.amountPaid);
 
 				if (matches(thisFee.code, "DVBW", "IIMP", "LIMP", "OIMP", "PRKG", "RILF", "RIMP", "SDWK", "TIMD", "TIMP", "TRFU", "WIMP", "SIMP", "FPLN")) {
 					impactFeeFlag = true;
 				} else {
 					impactFeeFlag = false;
 				}
-				comment("********* is this an impact fee = " + impactFeeFlag);
+				//comment("********* is this an impact fee = " + impactFeeFlag);
 
 				if (impactFeeFlag == false) {
 					if (thisFee.status == "CREDITED" || thisFee.status == "VOIDED") {
@@ -57,10 +58,10 @@ function unpaidIssFeesDue(capId) {
 					}
 				}
 
-				comment("*********  Impact Fee Amount Due is " + issueFeeAmtDue);
+				//comment("*********  Impact Fee Amount Due is " + issueFeeAmtDue);
 
 				totalFeeDue += issueFeeAmtDue;
-				comment("Running total is " + totalFeeDue);
+				//comment("Running total is " + totalFeeDue);
 			}
 
 			comment("Total issue fee balance is " + totalFeeDue);

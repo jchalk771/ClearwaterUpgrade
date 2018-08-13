@@ -62,9 +62,9 @@ function checkSubmittalDate(){
 		logDebug("Line 62 of checkSubmittalDate", "Made it here");
 		
 		//@emailTest - comment for production deployment
-			email(testMasterAddress,"NoReply@myclearwater.com", "Planning Submittal - "+ permitNbr, "Your planning application was submitted on " + vAppDate + ". " + vMsg);
+			//email(testMasterAddress,"NoReply@myclearwater.com", "Planning Submittal - "+ permitNbr, "Your planning application was submitted on " + vAppDate + ". " + vMsg);
 		//@emailProd - uncomment for production deployment
-			//email("sherry.watkins@myClearwater.com","NoReply@myclearwater.com", "Planning Submittal - "+ permitNbr, "Your planning application was submitted on " + vAppDate + ". " + vMsg);
+			email("sherry.watkins@myClearwater.com","NoReply@myclearwater.com", "Planning Submittal - "+ permitNbr, "Your planning application was submitted on " + vAppDate + ". " + vMsg);
 		
 		//aa.debug("Line 13", "Made it here");
 		logDebug("Line 65 of checkSubmittalDate", "Made it here");

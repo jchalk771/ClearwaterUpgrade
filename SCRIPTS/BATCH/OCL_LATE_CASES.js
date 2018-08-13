@@ -44,7 +44,7 @@ BTRCurrentYear = new Date().getFullYear();
 BTRCommentNote = BTRCurrentYear + "-" + (BTRCurrentYear + 1) + " BATCH";
 
 var fee;
-fee = "OCT";
+fee = "ADMN";
 
 /*------------------------------------------------------------------------------------------------------/
 | <===========Main=Loop================>

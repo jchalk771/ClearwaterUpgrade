@@ -1,3 +1,4 @@
+//Accela_PROD/SCRIPTS/EVENT/ISA;BUILDING!~!~!~.js
 //Branch
 //jec 170718 conversion begin
 
@@ -22,6 +23,7 @@ try{
 		comment("Insp Zone is " + inspZone);
 		var inspTypeArr = String(InspectionTypeList).split("|");
 		for (xx in inspTypeArr) 
+			comment("In the loop... inspTypeArr is " + inspTypeArr);
 			assignInsp4AMO_CLW(inspTypeArr[xx], inspZone,resCom,inspIdArr[xx]);
 	}
 

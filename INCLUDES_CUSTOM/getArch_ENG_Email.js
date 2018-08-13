@@ -11,19 +11,36 @@ function getArch_ENG_Email(capId){
 		if (capContactResult.getSuccess()) {
 			var conArr = capContactResult.getOutput();
 			comment("Array populated");
-			for (y in conArr) {
-				comment("Index is " + y + "Contact Type is " + conArr[y].getCapContactModel().getPeople().getContactType());
-				if (conArr[y].getCapContactModel().getPeople().getContactType() == "Architect" ||
-					conArr[y].getCapContactModel().getPeople().getContactType() == "Engineer") {
-					if (conArr[y].getEmail() != null) {
-						comment("Contacts's email is " + conArr[y].getEmail());
-						emailAddress = conArr[y].getEmail();
-					} else {
-						emailAddress = "No email."
+			comment("conArr is " + conArr);
+			
+			if(conArr.length > 0 )
+			{
+				for (y in conArr) 
+				{
+					comment("Index is " + y + "Contact Type is " + conArr[y].getCapContactModel().getPeople().getContactType());
+					if (conArr[y].getCapContactModel().getPeople().getContactType() == "Architect" ||
+							conArr[y].getCapContactModel().getPeople().getContactType() == "Engineer") 
+					{
+						if (conArr[y].getEmail() != null) 
+						{
+							comment("Contacts's email is " + conArr[y].getEmail());
+							emailAddress = conArr[y].getEmail();
+						} 	
+						else 
+						{
+							emailAddress = "No email."
+						}
 					}
 				}
 			}
-		} else {
+			else
+			{	
+				comment("Length of contact array is 0.");
+				emailAddress = "Problem";
+			}
+		} 
+		else 
+		{
 			comment("Nothing in the Contacts Array");
 			emailAddress = "Problem";
 		}

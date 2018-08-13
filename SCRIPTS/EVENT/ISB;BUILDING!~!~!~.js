@@ -9,10 +9,13 @@ try{
 	var feesDue = unpaidIssFeesDue(capId);
 	comment("Non-impact fees due = " + feesDue);
 	
-	if (capStatus == "Red" && (feeExists("RE01","INVOICED") || feeExists("RE02","INVOICED")) && (feeBalanceByStatus("RE01", "INVOICED") == 0 && feeBalanceByStatus("RE02", "INVOICED") == 0) && !(feeExists("RE01","NEW") || feeExists("RE02","NEW"))) {
-		updateAppStatus("Active","Reinspection fee was paid");
-		changeStatus = true;
-	}
+	if (capStatus == "Red" && (feeExists("RE01","INVOICED") || feeExists("RE02","INVOICED") || feeExists("FRED","INVOICED")) && 
+			(feeBalanceByStatus("RE01", "INVOICED") == 0 && feeBalanceByStatus("RE02", "INVOICED") == 0 && 
+			feeBalanceByStatus("FRED", "INVOICED") == 0)&& !(feeExists("RE01","NEW") || feeExists("RE02","NEW")|| feeExists("FRED","NEW"))) 
+			{
+				updateAppStatus("Active","Reinspection fee was paid");
+				changeStatus = true;
+			}
 
 	if (!appMatch("Building/Enforcement/*/*") &&  !matches(capStatus, "Active","Revisions Needed","In Review","Additional Info Required") && changeStatus == false) {
 		showMessage = true;

@@ -15,19 +15,19 @@ function isActiveAdhocTask(vAdhocTask){
 		
 		for (i in wfObj) {
 	   		fTask = wfObj[i];
-			comment("In the for loop, wf task = " + fTask.getTaskDescription());
-	        comment("WF Status = " + fTask.getDisposition());
-	        comment("Active Flag = " + fTask.getActiveFlag());
-	       	comment("Process Code = " + fTask.getProcessCode());
-	        comment("DispComment = " + fTask.getDispositionComment());
+			//comment("In the for loop, wf task = " + fTask.getTaskDescription());
+	        //comment("WF Status = " + fTask.getDisposition());
+	        //comment("Active Flag = " + fTask.getActiveFlag());
+	       	//comment("Process Code = " + fTask.getProcessCode());
+	        //comment("DispComment = " + fTask.getDispositionComment());
 	        //comment("Disp Note = " + fTask.getDispositionNote());
-	        comment("Process ID = " + fTask.getProcessID());
+	        //comment("Process ID = " + fTask.getProcessID());
 	        //comment("Res Disp Comment = " + fTask.getResDispositionComment());
 	        //comment("Res Task Desc = " + fTask.getResTaskDescription());
 	        //comment("Asgn Staff = " + fTask.getAssignedStaff());
 	        //comment("Asgn Date = " + fTask.getAssignmentDate());
 	        //comment("Task ID: " + fTask.getCurrentTaskID());
-	       	 comment("Cmp Flag: " + fTask.getCompleteFlag());
+	       	 //comment("Cmp Flag: " + fTask.getCompleteFlag());
 
 			if (fTask.getTaskDescription().equals(vAdhocTask))
 				if (fTask.getActiveFlag().equals("Y"))

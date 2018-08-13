@@ -18,9 +18,9 @@ try{
 		showMessage = true;
 		comment("Tree Replacement inspection is needed before this case can be closed.");
 		//@emailTest - comment for production deployment
-			email(testMasterAddress,"Lydia.Moreda@myClearwater.com","Permit Missing Tree Replacement Inspection","Permit (" + capIDString + ") needs Tree Replacement before it can be Completed.");
+			//email(testMasterAddress,"Lydia.Moreda@myClearwater.com","Permit Missing Tree Replacement Inspection","Permit (" + capIDString + ") needs Tree Replacement before it can be Completed.");
 		//@emailProd - uncomment for production deployment
-			//email("Matthew.Anderson1@myClearwater.com","Lydia.Moreda@myClearwater.com","Permit Missing Tree Replacement Inspection","Permit (" + capIDString + ") needs Tree Replacement before it can be Completed.");
+			email("Matthew.Anderson1@myClearwater.com","Lydia.Moreda@myClearwater.com","Permit Missing Tree Replacement Inspection","Permit (" + capIDString + ") needs Tree Replacement before it can be Completed.");
 		cancel = true;
 	}
 	
@@ -52,6 +52,13 @@ try{
 	if (wfTask == "Permit Verification" && wfStatus=="Issue" && isAdhocTaskActive("Online Customer Request")&&matches(eAddress, "No email.", "Owner-Builder")) {
 		showMessage = true;
 		comment("Email is " + eAddress+". There is no email available for this permit!  Update the professional record.");
+		cancel = true;
+	}
+	//Prevent staff from selecting Issue Permit from the Online customer Request Task
+	
+	if (wfTask =="Online Customer Request" && wfStatus =="Permit Issued"){
+		showMessage = true;
+		comment("Do not issue the permit with Online Customer Request. Issue it with Permit Verification task!");
 		cancel = true;
 	}
 	

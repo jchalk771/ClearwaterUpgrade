@@ -1,8 +1,16 @@
+//Accela_PROD/SCRIPTS/EVENT/WATUA;BUILDING!CONSTRUCTION PERMIT!~!~.js
 //Branch
 //jec 170721 conversion begin
 
-try{
+// Actions taken when the Adhoc task is submitted.
 
+try{
+    //Begin Reviews - Response to Comments - Courtesy Review
+	//Adhoc Task Add After Work Arounds
+	
+		
+	//Online Customer Request
+   
 	if (wfTask =="Online Customer Request" &&matches(wfStatus, "Walk Through Review","Log - Begin Reviews","Log - Response to Comments")) {
 		//branch("ES_ACTIVATE_REVIEWS")
 		activateReviews();
@@ -18,12 +26,16 @@ try{
 		editAppSpecific("Bin Number","EDR");
 		editAppSpecific("Walk-Thru", "No");
 		editAppSpecific("Target", vDueDate);
-		assignDueDateToTaskLevel("030001000000000", vDueDate );
+                //following worked in 8.0.0.0.3, would not work in 9.3.1
+		//assignDueDateToTaskLevel("030001000000000", vDueDate );
+                assignDueDateToTaskLevelWATAA("03", vDueDate );
 	}
 
 	if (wfTask =="Online Customer Request" && wfStatus == "Log - Response to Comments") {
 		addAdHocTask("ADHOC_TASKS","Response to Comments","Another Cycle Begins");
-		reactivateTaskLevelWATUA("030001000000000");
+		//following worked in 8.0.0.0.3, would not work in 9.3.1
+                //reactivateTaskLevelWATUA("030001000000000");
+                reactivateTaskLevel("030");
 		deactivateTask("Permit Verification");
 		updateAppStatus("In Review","Another Cycle Begins",capId);
 	}
@@ -33,6 +45,45 @@ try{
 		reactivateRevisionsOnly("030001000000000",3);
 		deactivateTask("Permit Verification");
 		updateAppStatus("In Review","Another Cycle Begins",capId);
+	}
+
+	if (wfTask =="Online Customer Request" && wfStatus =="Walk Through Review") { // added this for SD+ 23127
+		var workflowResult = aa.workflow.getTasks(capId);
+	 	if (workflowResult.getSuccess())
+	  	 	wfObj = workflowResult.getOutput();
+	  	else { 
+	  		logMessage("**ERROR: Failed to get workflow object: "); 
+	//  		return false; 
+	  	}
+		
+		for (i in wfObj) {
+	   		fTask = wfObj[i];
+			//comment("=======================================");
+			//comment("Loop iteration is " + i);
+			//comment("In the for loop, wf task = " + fTask.getTaskDescription());
+	        //comment("WF Status = " + fTask.getDisposition());
+	        //comment("Active Flag = " + fTask.getActiveFlag());
+	       	//comment("Process Code = " + fTask.getProcessCode());
+	        //comment("DispComment = " + fTask.getDispositionComment());
+	        //comment("Disp Note = " + fTask.getDispositionNote());
+	        //comment("Process ID = " + fTask.getProcessID());
+	        //comment("Res Disp Comment = " + fTask.getResDispositionComment());
+	        //comment("Res Task Desc = " + fTask.getResTaskDescription());
+	        //comment("Asgn Staff = " + fTask.getAssignedStaff());
+	        //comment("Asgn Date = " + fTask.getAssignmentDate());
+	        //comment("Task ID: " + fTask.getCurrentTaskID());
+	       	//comment("Cmp Flag: " + fTask.getCompleteFlag());
+
+			//set due date on all active tasks
+			if (fTask.getCurrentTaskID() == "030001000000000"){ //parallel task ID
+				//comment("Inside 030001000000000 if");
+				if (fTask.getActiveFlag() == "Y") 	{		//sd_chk_lv1 column in GPROCESS
+					//comment("Inside getActiveFlag if");
+					setDueDateOnActiveTask(fTask.getTaskDescription(), 1); // calling existing custom script
+					//comment("Went to setDueDateOnActiveTask and came back");
+				}
+			}
+		}
 	}
 
 	if (wfTask =="Online Customer Request" && wfStatus == "Walk Through - Revisions Only") {
@@ -45,13 +96,36 @@ try{
 		var eAddress = getPrimaryEmail4PlanReviewWATUA(capId);  //adding for compatibility, jec 9.1.2017
 		var permitNbr = capId.getCustomID();
 		updateTask("Application Submittal","Need Addtl Info", "", "");
-		updateAppStatus("Additional Info Required","status set by WFAdhocUA scipt");
+		if (capStatus !="Revisions Needed")
+		     updateAppStatus("Additional Info Required","status set by WFAdhocUA scipt");
 		rptParams = aa.util.newHashMap();
 		rptParams.put("alt_id", permitNbr);
 		rptParams.put("condition_status", "Not Met");
 		var noticeTemp = "MESSAGE_OUTSTANDING_ISSUES";
 		var noticeParams = aa.util.newHashtable();
 		noticeParams.put("$$altID$$", permitNbr);
+        
+        //Staff Name
+		var vName;
+		vName = asgnName.substr(0, asgnName.indexOf(','));
+		comment("vName is " + vName);
+		noticeParams.put("$$userStaff$$",vName);
+		
+		//phone
+		var vPhone;
+		//comment("Comma is in position " + asgnName.indexOf(','));
+		vPhone =  asgnName.substr(asgnName.indexOf(',') +1,asgnName.length - asgnName.indexOf(','));
+		comment("vPhone is " + vPhone);		
+		noticeParams.put("$$userPhone$$",vPhone);
+        
+		//Staff email address - format email address  
+		comment("Space is in position " + asgnName.indexOf(' '));
+		comment("Comma is in position " + asgnName.indexOf(','));
+		var vEmail;
+		vEmail = asgnName.slice(0,asgnName.indexOf(' '))+"." + asgnName.substr(asgnName.indexOf(' ') +1, asgnName.length - 5 - asgnName.indexOf(' ')-1)+"@myclearwater.com";    		
+		comment("vEmail is " + vEmail);
+		noticeParams.put("$$userEmail$$", vEmail);
+
 		if (wfComment == null) 
 			noticeParams.put("$$wfComment$$",  " " );
 		if (wfComment != null) 

@@ -11,8 +11,12 @@ try{
 	
 			
 	editAppSpecific("Received",dateAdd(null,0));
-	editAppSpecific("Expired",dateAddMonths(null,6));
-	editAppSpecific("Walk-Thru", "Yes");
+	//Expiration date is not set until permit issued
+	//editAppSpecific("Expired",dateAddMonths(null,6));
+	if(AInfo['Online Permit Type']=="New")
+		editAppSpecific("Walk-Thru", "No");
+	else
+		editAppSpecific("Walk-Thru", "Yes");
 		
 	//aa.debug("CTRCA Line 20 *****","Branches to ES_BCP_ADD_TRADE_FEE");
 	logDebug("CTRCA:Building/Construction Permit/*/* Line 17 *****, Calls bcpAddTradeFee");
@@ -47,7 +51,9 @@ try{
 		updateFee("PERM", "B_NCC", "FINAL", 1, "N");
 		updateFee("DBPR", "B_NCC", "FINAL", 1, "N");
 		updateFee("DCAF", "B_NCC", "FINAL", 1, "N");
-		updateFee("PERMT","B_NCC","FINAL",(parseInt(AInfo['Number of Trades'])-1)*30,"N");
+		if(AInfo['Number of Trades']>1){
+			 updateFee("PERMT","B_NCC","FINAL",(parseInt(AInfo['Number of Trades'])-1)*30,"N");
+		 }	
 	}
 
 	if (estValue > 7500 && AInfo['Online Permit Type'] =="A/C Change Out" && !appHasCondition("Online Review",null,"Recorded NOC")) {

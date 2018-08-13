@@ -28,12 +28,12 @@ function isAdhocTaskActive(wfstr){
 
 		for (i in wfObj) {
 			fTask = wfObj[i];
-			comment("Task Desc is " + fTask.getTaskDescription());
-			comment("Active Flag is " + fTask.getActiveFlag());
+			//comment("Task Desc is " + fTask.getTaskDescription());
+			//comment("Active Flag is " + fTask.getActiveFlag());
 			if (fTask.getTaskDescription().toUpperCase().equals(wfstr.toUpperCase()) && (!useProcess || fTask.getProcessCode().equals(processName)))
 				if (fTask.getActiveFlag().equals("Y"))
 					adhocActiveFlag = true;
-			comment("AdhocActiveFlag is " + adhocActiveFlag);
+			//comment("AdhocActiveFlag is " + adhocActiveFlag);
 
 		}
 		return adhocActiveFlag;

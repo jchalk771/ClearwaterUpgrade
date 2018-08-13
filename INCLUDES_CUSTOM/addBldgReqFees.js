@@ -48,16 +48,18 @@ function addBldgReqFees(){
 		}
 
 		if (AInfo['C-G'] == "CHECKED" && !feeExists("GRUB")) {
-			addFee("GRUB","B_NCC","FINAL",1,"N");
+			addFee("GRUB","B_NCC","FINAL",1,"Y");
 		}
 
+		if (matches(AInfo['Type of Permit'], "Addition","New Commercial","New Duplex / Triplex", "New Mobile Home","New Multi-Family Dwelling","New SF Detached","New Townhome", "Pool - Above Ground", "Pool - In Ground") && !feeExists("GRUB")){
+			addFee("GRUB","B_NCC","FINAL",1,"Y");
+		}
 		if (matches(AInfo['Type of Permit'],"Addition","New Commercial","New Duplex / Triplex","New Mobile Home","New Multi-Family Dwelling","New SF Detached","New Townhome") && (AInfo['Living Area'] > 0 || AInfo['Commercial'] > 0)) {
 			indoorSF = parseFloat(AInfo['Living Area']) + parseFloat(AInfo['Commercial']);
 		}
 
-		if (appMatch("Building/*/*/*") && !matches(AInfo['Type of Permit'], "Fence", "Marine", "Trenching", "Underground Fire Line") && !appMatch("Building/Engineering/*/*")  && !appMatch("Building/Enforcement/*/*")) {
-			updateFee("DBPR", "B_NCC", "FINAL", 1, "N");
-			updateFee("DCAF", "B_NCC", "FINAL", 1, "N");
+		if (appMatch("Building/*/*/*") && !matches(AInfo['Type of Permit'], "Fence", "Trenching", "Underground Fire Line") && !appMatch("Building/Engineering/*/*")  && !appMatch("Building/Enforcement/*/*")) {
+			checkSurchargeFee();
 		}
 
 		if (AInfo['Number Requested'] > 0) {

@@ -1,11 +1,15 @@
 /*------------------------------------------------------------------------------------------------------/
 | Program: OCL_Renew_To_Issued_Nightly.js  Trigger: Batch    Client : Clearwater, FL
+| In database it is BTR_NIGHTLY_BATCH4 script
 |
 | Version 1.0 - Base Version. 7/20/2010 - Nicholas Dorrough - City of Clearwater
 |
 | Move BTR cases from Red/Renewal to Issued when fees were all paid
 |
 | Modified 7/15/2011 - Changed email address from Nick to Lydia
+| Modified 8/01/2018 
+| - Changed email address from Lydia to John
+| - updated BTRCommentNote to 2018-2019
 /------------------------------------------------------------------------------------------------------*/
 /*------------------------------------------------------------------------------------------------------/
 | START: USER CONFIGURABLE PARAMETERS
@@ -36,13 +40,14 @@ var currentUserID = aa.env.getValue("CurrentUserID");   		// Current User
 var capId;				// CapId object
 var cap;				// Cap object
 
-var emailAddress = "lydia.moreda@myclearwater.com";
+var emailAddress = "john.warner@myclearwater.com";
+
 var emailText = "";
 var paramsOK = true;
 
 var BTRCommentNote, BTRCurrentYear;
 BTRCurrentYear = new Date().getFullYear(); 
-BTRCommentNote = "2017-2018 updated via script BTR_NightlyBatch";
+BTRCommentNote = "2018-2019 updated via script BTR_NightlyBatch";
 
 /*------------------------------------------------------------------------------------------------------/
 | <===========Main=Loop================>

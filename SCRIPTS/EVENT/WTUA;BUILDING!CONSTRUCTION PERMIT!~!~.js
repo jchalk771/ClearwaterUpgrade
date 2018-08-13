@@ -1,5 +1,6 @@
-//Branch
+//Branch /Accela_PROD/SCRIPTS/EVENT/WTUA;BUILDING!CONSTRUCTION PERMIT!~!~.js
 //jec 170724 conversion begin
+
 
 try{
 
@@ -13,6 +14,7 @@ try{
 		updateAppStatus("Active","status set by Fire Final script WTUA:Building/Construction Permit/*/*, line 8. Fire Final Inspection required before permit can be completed.");
 		activateTask( "Active Permit" );
 		editAppSpecific("Finaled",null);
+		updateTask("Active Permit","Notes", "Fire final inspection required before permit can be completed.","Fire final inspection required before permit can be completed.");
 		comment("The final field is " + AInfo['Finaled']);
 		showMessage = true;
 		comment("Final fire inspection is needed before this case can be closed.");
@@ -63,6 +65,45 @@ try{
 		updateAppStatus("In Review","Another Cycle Begins",capId);
 	}
 
+	if (wfTask =="Online Customer Request" && wfStatus =="Walk Through Review") { // added this for SD+ 23764
+		var workflowResult = aa.workflow.getTasks(capId);
+	 	if (workflowResult.getSuccess())
+	  	 	wfObj = workflowResult.getOutput();
+	  	else { 
+	  		logMessage("**ERROR: Failed to get workflow object: "); 
+	//  		return false; 
+	  	}
+		
+		for (i in wfObj) {
+	   		fTask = wfObj[i];
+			//comment("=======================================");
+			//comment("Loop iteration is " + i);
+			//comment("In the for loop, wf task = " + fTask.getTaskDescription());
+	        //comment("WF Status = " + fTask.getDisposition());
+	        //comment("Active Flag = " + fTask.getActiveFlag());
+	       	//comment("Process Code = " + fTask.getProcessCode());
+	        //comment("DispComment = " + fTask.getDispositionComment());
+	        //comment("Disp Note = " + fTask.getDispositionNote());
+	        //comment("Process ID = " + fTask.getProcessID());
+	        //comment("Res Disp Comment = " + fTask.getResDispositionComment());
+	        //comment("Res Task Desc = " + fTask.getResTaskDescription());
+	        //comment("Asgn Staff = " + fTask.getAssignedStaff());
+	        //comment("Asgn Date = " + fTask.getAssignmentDate());
+	        //comment("Task ID: " + fTask.getCurrentTaskID());
+	       	//comment("Cmp Flag: " + fTask.getCompleteFlag());
+
+			//set due date on all active tasks
+			if (fTask.getCurrentTaskID() == "030001000000000"){ //parallel task ID
+				//comment("Inside 030001000000000 if");
+				if (fTask.getActiveFlag() == "Y") 	{		//sd_chk_lv1 column in GPROCESS
+					//comment("Inside getActiveFlag if");
+					setDueDateOnActiveTask(fTask.getTaskDescription(), 1); // calling existing custom script
+					//comment("Went to setDueDateOnActiveTask and came back");
+				}
+			}
+		}
+	}
+
 	if (wfTask =="Online Customer Request" && wfStatus == "Walk Through - Revisions Only") {
 		reactivateRevisionsOnly("030001000000000",1);
 		updateAppStatus("In Review","New Cycle Begins",capId);
@@ -72,7 +113,8 @@ try{
 	if (wfTask =="Online Customer Request" && wfStatus == "Outstanding Issues") {
 		var permitNbr = capId.getCustomID();
 		updateTask("Application Submittal","Need Addtl Info", "", "");
-		updateAppStatus("Additional Info Required","status set by WFAdhocUA scipt");
+		if (capStatus != "Revisions Needed")
+		     updateAppStatus("Additional Info Required","status set by WFAdhocUA scipt");
 		rptParams = aa.util.newHashMap();
 		rptParams.put("alt_id", permitNbr);
 		rptParams.put("condition_status", "Not Met");

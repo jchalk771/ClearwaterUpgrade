@@ -1,3 +1,5 @@
+//Accela_PROD/SCRIPTS/PAGEFLOW/ACA_EXP_LIC_MSG.js
+
 //The following code returns a message to the user when creating a permit in ACA.
 //Msg displays in pink at top of page in ACA when the Continue button is pressed.
 //Connect script via v360 ACA Admin page flow. Add to Continue button as a page flow script
@@ -21,7 +23,23 @@ var resultLabel;
 var returnMsg = "";
 var currentdate = new Date(); 
 var br = "<BR>";
-var website = "http://clearwater/Apps20/Accela/AccelaNew.aspx";
+
+//Used to be http://clearwater but after the intranet crash we'll leave it msb-intranet.
+//var website = "http://clearwater/Apps20/Accela/ContractorExpiredPermits.aspx";
+//Use the one below for PROD:
+var website = "http://msb-intranet/Apps20/Accela/ContractorExpiredPermits.aspx";
+//Use the one below for DEV:
+//var website = "http://msb-intra-test/Apps20/Accela/ContractorExpiredPermits.aspx";
+
+//Set webservice based on aca_config -- does not work: needs more work!
+//NOTE that CitizenAccessTest gets data from AccelaDev database for this webservice (only one connectionstring.config file per server)!!!
+//if ((lookup("ACA_CONFIGS","ACA_SITE")=="https://172.20.2.52/CitizenAccessDev/Admin/default.aspx") || (lookup("ACA_CONFIGS","ACA_SITE")=="https://172.20.2.52/CitizenAccessTest/Admin/default.aspx"))
+//	{var website = "http://msb-intra-test/Apps20/Accela/ContractorExpiredPermits.aspx";}
+//else
+//	
+//	{var website = "http://msb-intranet/Apps20/Accela/ContractorExpiredPermits.aspx";}
+
+	
 
 //get Licensed Profs on CAP
 var licProfResult = aa.licenseScript.getLicenseProf(capId);
