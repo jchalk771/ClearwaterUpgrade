@@ -4,7 +4,7 @@
 try{
 
 	//branch("ES_UPDATE_CODE_WF_TASKS")
-		//@TODO: Why are we establishing an inspector ID that isn't being used?
+		//@TODO: Why are we establishing an inspector ID that isn't being used? Maybe move to INCLUDESS_CUSTOM_GLOBALS.js
 		if (AInfo['Assigned Inspector'] != null) {
 			inspUserId = lookup("CODE_ASSIGNED_INSP",AInfo['Assigned Inspector']);
 		} 
