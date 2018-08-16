@@ -4,6 +4,10 @@
 //cancels the event.
 try{
 
+	//jj's test
+	logDebug('JJ LOOK: my message');
+	aa.cap.updateCapAltID(capId, 'JJTST001-worked');
+
 	if (appMatch("Building/*/*/UNS") && wfTask == "Complaint Received" && wfStatus == "No Violation") {
 		//branch ("ES_REMOVE_PARCEL_CONDITION")
 			removeParcelCondition (null,"Parcel","Unsafe Building");
