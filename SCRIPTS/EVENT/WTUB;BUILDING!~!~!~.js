@@ -117,6 +117,13 @@ try{
 		comment("Email is " + eAddress+". There is no email available for this permit!  Update the professional record.");
 		cancel = true;
 	}
+
+	//jjs Test
+	if(appMatch('Building/*/*/UNS')){
+		showMessage = true;
+		comment('jjs test');
+		cancel = true;
+	}
 	
 }catch(err){
 	logDebug("An error occurred in WTUB:Building/*/*/*: Conversion: " + err. message);
