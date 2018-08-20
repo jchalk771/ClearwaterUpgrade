@@ -5,6 +5,10 @@
 // Actions taken when the Adhoc task is submitted.
 
 try{
+	//jj Test
+	updateShortNotes('JJ this event ran!!!');
+	
+
 	if (matches(wfTask,"Begin Reviews","Response to Comments", "Courtesy Review","Online Customer Request") && matches(wfStatus,"Applicant Notified","Pick-up letter","Pick-up Amendment","Incomplete","Outstanding Issues")) {
 		eAddress = getPrimaryEmail4PlanReviewWATUA(capId);  //eliminating scope limiter to enable for following branches, jec 8.28.2017
 		comment("WATUA Email is " + eAddress);

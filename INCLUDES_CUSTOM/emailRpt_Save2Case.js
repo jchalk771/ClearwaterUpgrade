@@ -5,8 +5,8 @@
 //Parameters come from the Report Parameter Name column in Report manager!!
 //this function now used with plan review adhoc tasks
 //report mngr must have default output set to pdf!
-function emailRpt_Save2Case(rptName, pNbr, rptParams, noteParams, emailTo, templateName){
-	try{
+function emailRpt_Save2Case(rptName, pNbr, rptParams, noteParams, emailTo, templateName) {
+	try {
 
 		comment("Cap ID is " + pNbr);
 
@@ -67,12 +67,11 @@ function emailRpt_Save2Case(rptName, pNbr, rptParams, noteParams, emailTo, templ
 						comment("Email sent successfully!");
 						return true;
 					} else {
-						//@TODO - result is undefined.  Did you mean emailResult.getErrorType()?
-						logDebug("Failed to send mail. - " + emailResult.getErrorType());  //correcting to see true nature of error when failing
-						comment("Failed to send mail. - " + emailResult.getErrorType());   //JEC,Accela 9.1.17
+						logDebug("Failed to send mail. - " + emailResult.getErrorType()); //correcting to see true nature of error when failing
+						comment("Failed to send mail. - " + emailResult.getErrorType());
 						return false;
 					}
-					
+
 				} else {
 					comment("Report Result was null.");
 					comment("Unable to run report: " + reportName);
@@ -92,8 +91,8 @@ function emailRpt_Save2Case(rptName, pNbr, rptParams, noteParams, emailTo, templ
 		//  comment("Made it to bottom of script.");
 		//   return false;
 
-	}catch(err){
-		logDebug("An error occurred in custom function emailRpt_Save2Case Conversion: " + err. message);
+	} catch (err) {
+		logDebug("An error occurred in custom function emailRpt_Save2Case Conversion: " + err.message);
 		logDebug(err.stack);
 	}
 }

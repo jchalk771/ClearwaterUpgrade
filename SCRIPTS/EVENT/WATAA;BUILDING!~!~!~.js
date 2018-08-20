@@ -9,6 +9,10 @@ try{
 		comment("WF Due: " + vDueDate);
 	}
 
+	//jj Test
+	updateShortNotes('JJ this event ran!!!');
+	
+
 	if (!appMatch("Building/Fire/*/*") && wfTask == "Begin Reviews" && AInfo['Target'] != null) {
 		assignDueDateToTaskLevelWATAA("030001000000000", AInfo['Target']);
 	}
