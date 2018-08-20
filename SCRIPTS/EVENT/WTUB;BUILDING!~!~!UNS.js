@@ -1,7 +1,6 @@
 //Branch
 //jec 170721 conversion begin
-//@TODO - Why is this on WTUB and not After event early?  This is an after rule and won't execute if any other branch ?I think you are wrong going to confirm?
-//cancels the event.
+//@TODO - Why is this on WTUB and not After event early?  This is an after rule and won't execute if any other branch cancels the event.
 try{
 
 	if (appMatch("Building/*/*/UNS") && wfTask == "Complaint Received" && wfStatus == "No Violation") {
