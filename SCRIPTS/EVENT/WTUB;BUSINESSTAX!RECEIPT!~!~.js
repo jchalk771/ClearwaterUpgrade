@@ -9,7 +9,7 @@ try{
 	//	cancel = true;
 	//}	
 	
-	if(appHasCondition(null,"Not Met",null,null) && matches(wfTask,"Issue BTR","Renewal", "Issue New - 16-17") && !matches(wfStatus,"2nd Notice","Enforcement","Final Notice","Renewal Delinquent - RED","Denied","Hold","Moved in City","Moved Out of City","Notes","Out of Business","Renewal Notice","Void","Withdrawn")){
+	if(appHasCondition(null,"Not Met",null,null) && matches(wfTask,"Issue BTR","Renewal", "Issue New - 17-18") && !matches(wfStatus,"2nd Notice","Enforcement","Final Notice","Renewal Delinquent - RED","Denied","Hold","Moved in City","Moved Out of City","Notes","Out of Business","Renewal Notice","Void","Withdrawn")){
 		showMessage = true; 
 		comment("Cannot complete issuance at this time because there are conditions that have not been met."); 
 		cancel = true;
