@@ -11,7 +11,7 @@ if (currentUserID == "NKRNETA") showDebug = true;
 //if (currentUserID == "DHEDD")   showDebug = true;
 
 if ((lookup("ACA_CONFIGS","ACA_SITE")=="https://172.20.2.52/CitizenAccessDev/Admin/default.aspx") || (lookup("ACA_CONFIGS","ACA_SITE")=="https://172.20.2.52/CitizenAccessTest/Admin/default.aspx"))
-	{testMasterAddress = "Lydia.Moreda@myClearwater.com; anelise.wilhelm@myclearwater.com";}
+	{testMasterAddress = "john.warner@myClearwater.com; anelise.wilhelm@myclearwater.com";}
 else
 	//{testMasterAddress = "aemoreda@aol.com; nermina.krneta@myclearwater.com";}
 	{testMasterAddress = "ivan.dimitrov@myclearwater.com; James.Benwell@MyClearwater.com; Wioletta.Dabrowski@MyClearwater.com; jeremy.shaw@myclearwater.com; jason.alber@myClearwater.com;christopher.melone@myClearwater.com; bradford.cheek@myclearwater.com";}
